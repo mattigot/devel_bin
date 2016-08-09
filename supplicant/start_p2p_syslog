@@ -1,0 +1,3 @@
+reset
+export P2P_SYS_GREP=$1
+sudo tail -f /var/log/syslog | grep -E $P2P_SYS_GREP

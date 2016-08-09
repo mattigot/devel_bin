@@ -1,0 +1,4 @@
+echo "cat /dev/null | sudo tee /var/log/syslog"
+cat /dev/null | sudo tee /var/log/syslog
+echo "sudo dmesg -c"
+sudo dmesg -c

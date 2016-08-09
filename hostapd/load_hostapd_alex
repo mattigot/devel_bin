@@ -1,0 +1,70 @@
+#!/bin/bash
+
+# Title:
+# Configure SoftAP and stations, run pings
+#
+# Description:
+# Configure and start SoftAP on Android platform.
+# Configure one or two BSS stations to connect to the AP.
+# Set static IP on all end points. Run pings.
+#
+# Assumptions:
+# - adb must be installed
+# - wifi stack in kernel on Android platform must be started up
+# - wifi driver and wpa supplicant must be installed on Linux
+#   computers running BSS stations
+#
+
+EXPECTED_ARGS=1
+MAX_ARGS=2
+CONF_FILE=~/bin/hostapd/softap.conf
+
+STA_1_ID=$1
+STA_2_ID=$2
+TEST_HOME=~/tools/ut
+static_ip_ap=10.10.10.1
+static_ip_sta1=10.10.10.2
+static_ip_sta2=10.10.10.3
+
+function usage {
+	    echo "Usage:"
+	    echo -e "\t${0##*/} <user>@<computer 1 name or IP>"
+	    echo -e "\tSetup SoftAP and configure BSS station on computer 1 to connect to the SoftAP"
+	    echo -e "\n\t${0##*/} <user>@<computer 1 name or IP> [user>@<computer 2 name or IP]"
+	    echo -e "\tThe same as above but second station (optional) is used for L2 bridge tests"
+	    exit 1
+}
+
+function setup_remote_sta {
+	ssh $1 'bash -s' < cd $TEST_HOME/tests/softap
+	ssh $1 'bash -s' < ./init.sh linux
+	sleep 5
+	ssh $1 'bash -s' < ./run.sh linux ping
+}
+
+#if [ $# -lt $EXPECTED_ARGS ]; then
+#	usage
+#fi
+
+if_name=`ifconfig -a | grep -m 1 wlan | sed 's/ *\ .*//'`
+
+sudo dmesg -c
+sudo echo 0 > /var/log/syslog
+
+sudo killall wpa_supplicant
+sudo killall hostapd
+sleep 1
+sudo hostapd -dd -t $CONF_FILE
+sleep 5
+
+if [ -n "$static_ip_ap" ]; then
+	sudo ifconfig $if_name $static_ip_ap netmask 255.255.255.0
+fi
+exit
+echo "Activate BSS STA on $STA_1_ID computer"
+setup_remote_sta $STA_1_ID $static_ip_sta1 
+
+if [ $# -eq $MAX_ARGS ]; then
+	echo "Activate BSS STA on $STA_2_ID computer"
+	setup_remote_sta $STA_2_ID $static_ip_sta2
+fi 

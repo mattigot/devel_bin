@@ -1,0 +1,2 @@
+insmod 	/lib/modules/3.0.31/updates/drivers/net/wireless/iwlwifi/iwlwifi.ko nvm_file=iwlwifi-7999.nvm debug=0x08000000
+insmod 	/lib/modules/3.0.31/updates/drivers/net/wireless/iwlwifi/mvm/iwlmvm.ko

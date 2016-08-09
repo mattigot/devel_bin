@@ -1,0 +1,17 @@
+#!/bin/bash
+
+sudo ssh -p 29418 gerrit.rds.intel.com gerrit set-reviewers \
+	    -a oren.givon@intel.com \
+	    $1
+
+#	    -a dor.shaish@intel.com \
+#	    -a haim.dreyfuss@intel.com \
+#	    -a oren.givon@intel.com \
+#	    -a matti.gottlieb@intel.com \
+#	    -a liad.kaufman@intel.com \
+#	    -a moshe.harel@intel.com \
+#	    -a golan.ben.ami@intel.com \
+#	    -a yael.zak@intel.com \
+#	    -a sharon.dvir@intel.com \
+#	    $1
+

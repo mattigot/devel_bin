@@ -1,0 +1,20 @@
+#bin/bash
+
+#tab="--tab-with-profile=Default"
+tab="--tab-with-profile=Titleable -t "
+cmd="bash -c 'sudo tail -f /var/log/syslog';bash"
+cmd2="bash -c 'grep P2P';bash"
+cmd3="bash -c 'cd devel';bash"
+foo=""
+
+foo+=($tab "general" -e "$cmd")         
+foo+=($tab "ping" -e "$cmd | $cmd2")         
+foo+=($tab "devel" -e "$cmd3")         
+      
+#gnome-terminal "${foo[@]}"
+gnome-terminal \
+	--tab-with-profile=Titleable -t "A" \
+	--tab-with-profile=Titleable -t "B" -e "sudo tail -f /var/log/syslog" \
+	--tab-with-profile=Titleable -t "C" -e 'sh -c "sudo tail -f /var/log/syslog | grep --line-buffered txt"'
+
+exit 0

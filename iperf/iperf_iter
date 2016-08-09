@@ -1,0 +1,6 @@
+for i in `seq 1 $3`
+do
+	echo "##############test num $i - $1_$i - $2##########################"
+	cat ~/devel/driver/iwlwifi-stack-dev/iperf_test/$1_$i | grep $2
+#	cat ~/devel/driver/iwlwifi-stack-dev/iperf_test/$1_$i >> res.txt
+done

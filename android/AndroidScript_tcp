@@ -1,0 +1,82 @@
+#!/bin/sh
+
+echo "rm -rf iperf_test"
+rm -rf iperf_test
+echo "mkdir iperf_test"
+mkdir iperf_test
+
+
+for i in `seq 1 $1`
+do
+	echo "##############test num $i##########################"
+
+	# ---------------- setup client side ------------------------- #
+	echo ">> sudo killall wpa_supplicant"
+	sudo killall wpa_supplicant
+	echo ">> sudo modprobe iwlmvm -r"
+	sudo modprobe iwlmvm -r
+	echo ">> sudo modprobe iwlwifi -r"
+	sudo modprobe iwlwifi -r
+
+	echo "sudo dmesg -c &"
+	sudo dmesg -c &
+
+	echo ">> sudo modprobe iwlwifi"
+	sudo modprobe iwlwifi
+	sleep 3
+	echo ">> sudo ifconfig wlan0 up"
+	sudo ifconfig wlan0 up
+
+	echo ">> sudo wpa_supplicant -i wlan0 -c /usr/share/ix/script/test/wifi/sta_11i/DEV-OPEN-GN.conf -B"
+	sudo wpa_supplicant -i wlan0 -c /usr/share/ix/script/test/wifi/sta_11i/DEV-OPEN-GN.conf -B
+	sleep 5
+
+	echo "sudo ifconfig wlan0 10.10.10.01"
+	sudo ifconfig wlan0 10.10.10.01
+
+
+	# ---------------- setup server side ------------------------- #
+	echo ">> adb kill-server"
+	adb kill-server
+	sleep 3
+
+	echo ">> adb connect 10.12.217.165"
+	adb connect 10.12.217.165
+
+	echo "adb shell dmesg -c &"
+	adb shell dmesg -c &
+
+	echo ">> adb shell am startservice --user 0 -a android.intent.action.run -n com.intel.mwg/com.intel.Dispatcher -e ITE_METHOD DUT.WiFi.EnableDevice"
+	adb shell am startservice --user 0 -a android.intent.action.run -n com.intel.mwg/com.intel.Dispatcher -e ITE_METHOD DUT.WiFi.EnableDevice
+	sleep 5
+
+	echo "adb shell am startservice --user 0 -a android.intent.action.run -n com.intel.mwg/com.intel.Dispatcher -e ITE_METHOD DUT.WiFiProfile.DeleteAllProfiles"
+	adb shell am startservice --user 0 -a android.intent.action.run -n com.intel.mwg/com.intel.Dispatcher -e ITE_METHOD DUT.WiFiProfile.DeleteAllProfiles
+
+
+	echo "adb shell am startservice --user 0 -a android.intent.action.run -n com.intel.mwg/com.intel.Dispatcher -e ITE_METHOD DUT.WiFiProfile.CreateProfile -e ARG SSID:DEV-OPEN-GN,PASSWORD:none,SECURITY:Open.Personal.None"
+	adb shell am startservice --user 0 -a android.intent.action.run -n com.intel.mwg/com.intel.Dispatcher -e ITE_METHOD DUT.WiFiProfile.CreateProfile -e ARG SSID:DEV-OPEN-GN,PASSWORD:none,SECURITY:Open.Personal.None
+	sleep 1
+
+	echo "adb shell am startservice --user 0 -a android.intent.action.run -n com.intel.mwg/com.intel.Dispatcher -e ITE_METHOD DUT.WiFiProfile.ConnectProfile -e ARG SSID:DEV-OPEN-GN"
+	adb shell am startservice --user 0 -a android.intent.action.run -n com.intel.mwg/com.intel.Dispatcher -e ITE_METHOD DUT.WiFiProfile.ConnectProfile -e ARG SSID:DEV-OPEN-GN
+	sleep 2
+
+	echo "adb shell ifconfig wlan0 10.10.10.02"
+	adb shell ifconfig wlan0 10.10.10.02
+
+	sudo ping -i 0.1 -w 60 10.10.10.02
+#	adb shell iperf -s -u -w 64K -p 5111 -l 1370 -P 1 -i 1 -f m -S 0 &
+	#iperf -c 10.12.217.147 -u -b 1M -t 60 -w 64K -p 5111 -l 1370 -P 1 -i 1	-f m -S 0 > ./iperf_test/ipref_$i 2>&1 & echo $|
+	
+#	iperf -c 10.10.10.02 -u -b 1M -t 60 -w 64K -p 5111 -l 1370 -P 1 -i 1 -f m -S 0 > ./iperf_test/ipref_$i 2>&1 & echo $!
+#	iperf -c 172.16.106.117 -u -b 1M -t 60 -w 64K -p 5111 -l 1370 -P 1 -i 1 -f m -S 0 > ./iperf_test/ipref_$i 2>&1 & echo $!
+#	iperf -c 10.10.10.12 -u -b 1M -t 60 -w 64K -p 5111 -l 1370 -P 1 -i 1 -f m -S 0 > ./iperf_test/ipref_$i 2>&1 & echo $!
+
+	sleep 62
+	echo ">> adb shell am startservice --user 0 -a android.intent.action.run -n com.intel.mwg/com.intel.Dispatcher -e ITE_METHOD DUT.WiFi.DisableDevice"
+	adb shell am startservice --user 0 -a android.intent.action.run -n com.intel.mwg/com.intel.Dispatcher -e ITE_METHOD DUT.WiFi.DisableDevice
+
+	dmesg > ./iperf_test/dmesg_$i
+	adb shell dmesg > ./iperf_test/adb_dmesg_$i
+done

@@ -1,0 +1,1 @@
+sudo wpa_supplicant -i wlan0 -c/usr/share/ix/script/test/wifi/sta_11i/DEV-OPEN-G.conf -ddsB  -D nl80211 -g /tmp/wpa_supplicat –G adm

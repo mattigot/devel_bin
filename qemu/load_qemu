@@ -1,0 +1,3 @@
+#!/bin/bash -x
+
+sudo qemu-system-x86_64 --enable-kvm -nographic -hda ~/images/QEMU-VMLinux.img -m 2G -smp 2 -device pci-assign,host=$1 -net nic -net user,hostfwd=tcp::2223-:22

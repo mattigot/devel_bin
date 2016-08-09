@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Core>
+	<WiFi>
+		<LibName>libiwlwifiapi.so</LibName>
+	</WiFi>
+	<GNSS>
+		<LibName>libgnssapi.so</LibName>
+	</GNSS>
+	<BT>
+		<LibName>libbtapi.so</LibName>
+	</BT>
+</Core>

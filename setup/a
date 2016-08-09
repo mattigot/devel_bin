@@ -1,0 +1,512 @@
+[150482.317761] PM: Syncing filesystems ... done.
+[150482.401616] PM: Preparing system for mem sleep
+[150482.402219] Freezing user space processes ... (elapsed 0.001 seconds) done.
+[150482.403993] Freezing remaining freezable tasks ... (elapsed 0.001 seconds) done.
+[150482.405217] PM: Entering mem sleep
+[150482.405272] Suspending console(s) (use no_console_suspend to debug)
+[150482.405397] ------------ wiphy_suspend (108) -----------
+[150482.405398] 	------------ rdev_suspend (13) -----------
+[150482.405399] ----------- ieee80211_suspend (1961) -----------
+[150482.405400] 	------------ __ieee80211_suspend (21) -----------
+[150482.405424] 	------------ drv_suspend (79) -----------
+[150482.405426] ------------ iwl_mvm_suspend (1249) -----------
+[150482.405427] 	------------ __iwl_mvm_suspend (1116) -----------
+[150482.405428] 	------------ iwl_mvm_get_wowlan_config (808) -----------
+[150482.405432] ########### iwl_queue_inc_wrap (179) ###########
+[150482.405545] sd 0:0:0:0: [sda] Synchronizing SCSI cache
+[150482.405612] sd 0:0:0:0: [sda] Stopping disk
+[150482.406234] ########### iwl_pcie_irq_handler (1327) ###########
+[150482.406237] ########### iwl_pcie_rx_handle (1094) ###########
+[150482.406243] ########### iwl_pcie_cmdq_reclaim (1164) ###########
+[150482.406244] ########### iwl_queue_inc_wrap (179) ###########
+[150482.406245] ########### iwl_queue_inc_wrap (179) ###########
+[150482.406274] ########### iwl_pcie_irq_handler (1327) ###########
+[150482.406276] ########### iwl_pcie_rx_handle (1094) ###########
+[150482.406349] 	------------ iwl_mvm_wowlan_config (985) -----------
+[150482.406353] ########### iwl_queue_inc_wrap (179) ###########
+[150482.407134] ########### iwl_pcie_irq_handler (1327) ###########
+[150482.407136] ########### iwl_pcie_rx_handle (1094) ###########
+[150482.407138] ########### iwl_pcie_cmdq_reclaim (1164) ###########
+[150482.407139] ########### iwl_queue_inc_wrap (179) ###########
+[150482.407140] ########### iwl_queue_inc_wrap (179) ###########
+[150482.407163] ########### iwl_pcie_irq_handler (1327) ###########
+[150482.407165] ########### iwl_pcie_rx_handle (1094) ###########
+[150482.407253] ########### iwl_queue_inc_wrap (179) ###########
+[150482.408131] ########### iwl_pcie_irq_handler (1327) ###########
+[150482.408134] ########### iwl_pcie_rx_handle (1094) ###########
+[150482.408140] ########### iwl_pcie_cmdq_reclaim (1164) ###########
+[150482.408141] ########### iwl_queue_inc_wrap (179) ###########
+[150482.408142] ########### iwl_queue_inc_wrap (179) ###########
+[150482.408179] ########### iwl_pcie_irq_handler (1327) ###########
+[150482.408181] ########### iwl_pcie_rx_handle (1094) ###########
+[150482.408245] ########### iwl_queue_inc_wrap (179) ###########
+[150482.409083] ########### iwl_pcie_irq_handler (1327) ###########
+[150482.409088] ########### iwl_pcie_rx_handle (1094) ###########
+[150482.409098] ########### iwl_pcie_cmdq_reclaim (1164) ###########
+[150482.409100] ########### iwl_queue_inc_wrap (179) ###########
+[150482.409102] ########### iwl_queue_inc_wrap (179) ###########
+[150482.409145] ########### iwl_queue_inc_wrap (179) ###########
+[150482.409164] ########### iwl_pcie_irq_handler (1327) ###########
+[150482.409166] ########### iwl_pcie_rx_handle (1094) ###########
+[150482.409930] ########### iwl_pcie_irq_handler (1327) ###########
+[150482.409933] ########### iwl_pcie_rx_handle (1094) ###########
+[150482.409939] ########### iwl_pcie_cmdq_reclaim (1164) ###########
+[150482.409940] ########### iwl_queue_inc_wrap (179) ###########
+[150482.409941] ########### iwl_queue_inc_wrap (179) ###########
+[150482.409965] ########### iwl_queue_inc_wrap (179) ###########
+[150482.409976] ########### iwl_pcie_irq_handler (1327) ###########
+[150482.409978] ########### iwl_pcie_rx_handle (1094) ###########
+[150482.410851] ########### iwl_pcie_irq_handler (1327) ###########
+[150482.410853] ########### iwl_pcie_rx_handle (1094) ###########
+[150482.410857] ########### iwl_pcie_cmdq_reclaim (1164) ###########
+[150482.410858] ########### iwl_queue_inc_wrap (179) ###########
+[150482.410859] ########### iwl_queue_inc_wrap (179) ###########
+[150482.410871] ########### iwl_queue_inc_wrap (179) ###########
+[150482.410958] ########### iwl_pcie_irq_handler (1327) ###########
+[150482.410960] ########### iwl_pcie_rx_handle (1094) ###########
+[150482.411767] ########### iwl_pcie_irq_handler (1327) ###########
+[150482.411769] ########### iwl_pcie_rx_handle (1094) ###########
+[150482.411774] ########### iwl_pcie_cmdq_reclaim (1164) ###########
+[150482.411775] ########### iwl_queue_inc_wrap (179) ###########
+[150482.411776] ########### iwl_queue_inc_wrap (179) ###########
+[150482.411803] ########### iwl_pcie_irq_handler (1327) ###########
+[150482.411806] ########### iwl_pcie_rx_handle (1094) ###########
+[150482.411886] ------------ iwl_trans_pcie_d3_suspend (1342) -----------
+[150482.420151] ------------ iwl_pci_suspend (683) -----------
+[150483.084346] PM: suspend of devices complete after 679.837 msecs
+[150483.100286] PM: late suspend of devices complete after 15.958 msecs
+[150483.100800] iwlwifi 0000:02:00.0: System wakeup enabled by ACPI
+[150483.116297] ehci-pci 0000:00:1d.0: System wakeup enabled by ACPI
+[150483.132499] ehci-pci 0000:00:1a.0: System wakeup enabled by ACPI
+[150483.148431] e1000e 0000:00:19.0: System wakeup enabled by ACPI
+[150483.180132] xhci_hcd 0000:00:14.0: System wakeup enabled by ACPI
+[150483.196118] PM: noirq suspend of devices complete after 95.952 msecs
+[150483.196570] ACPI: Preparing to enter system sleep state S3
+[150483.199035] PM: Saving platform NVS memory
+[150483.199768] Disabling non-boot CPUs ...
+[150483.200947] kvm: disabling virtualization on CPU1
+[150483.201140] smpboot: CPU 1 is now offline
+[150483.202538] kvm: disabling virtualization on CPU2
+[150483.303916] smpboot: CPU 2 is now offline
+[150483.304326] Broke affinity for irq 44
+[150483.305327] kvm: disabling virtualization on CPU3
+[150483.407779] smpboot: CPU 3 is now offline
+[150483.408994] ACPI: Low-level resume complete
+[150483.409036] PM: Restoring platform NVS memory
+[150483.409516] CPU0: Thermal monitoring handled by SMI
+[150483.409537] Enabling non-boot CPUs ...
+[150483.409573] x86: Booting SMP configuration:
+[150483.409575] smpboot: Booting Node 0 Processor 1 APIC 0x2
+[150483.420854] CPU1: Thermal monitoring handled by SMI
+[150483.420879] kvm: enabling virtualization on CPU1
+[150483.423161] Intel pstate controlling: cpu 1
+[150483.423220] CPU1 is up
+[150483.423235] smpboot: Booting Node 0 Processor 2 APIC 0x1
+[150483.434487] CPU2: Thermal monitoring handled by SMI
+[150483.434510] kvm: enabling virtualization on CPU2
+[150483.436698] Intel pstate controlling: cpu 2
+[150483.436738] CPU2 is up
+[150483.436751] smpboot: Booting Node 0 Processor 3 APIC 0x3
+[150483.447995] CPU3: Thermal monitoring handled by SMI
+[150483.448014] kvm: enabling virtualization on CPU3
+[150483.450221] Intel pstate controlling: cpu 3
+[150483.450256] CPU3 is up
+[150483.453094] ACPI: Waking up from system sleep state S3
+[150483.481374] dell_wmi: Received unknown WMI event (0x0)
+[150483.501156] xhci_hcd 0000:00:14.0: System wakeup disabled by ACPI
+[150483.565058] ehci-pci 0000:00:1a.0: System wakeup disabled by ACPI
+[150483.597017] ehci-pci 0000:00:1d.0: System wakeup disabled by ACPI
+[150483.645213] PM: noirq resume of devices complete after 173.431 msecs
+[150483.645328] PM: early resume of devices complete after 0.092 msecs
+[150483.645436] mei_me 0000:00:16.0: irq 43 for MSI/MSI-X
+[150483.650613] snd_hda_intel 0000:00:1b.0: irq 45 for MSI/MSI-X
+[150483.652131] e1000e 0000:00:19.0: System wakeup disabled by ACPI
+[150483.652155] e1000e 0000:00:19.0: irq 47 for MSI/MSI-X
+[150483.652571] iwlwifi 0000:02:00.0: System wakeup disabled by ACPI
+[150483.652608] ------------ iwl_pci_resume (694) -----------
+[150483.652638] 	------------ iwl_trans_pcie_rf_kill (1331) -----------
+[150483.652658] ------------ wiphy_resume (134) -----------
+[150483.652666] 	------------ rdev_resume (23) -----------
+[150483.652667] ------------ ieee80211_resume (1968) -----------
+[150483.652667] 	------------ __ieee80211_resume (1872) -----------
+[150483.652668] 	------------ ieee80211_reconfig (1766) -----------
+[150483.652669] ------------ iwl_mvm_resume (2120) -----------
+[150483.652670] 	------------ iwl_mvm_resume_d3 (2068) -----------
+[150483.652670] 	------------ __iwl_mvm_resume (1988) -----------
+[150483.652672] ------------ iwl_trans_pcie_d3_resume (1392) -----------
+[150483.652753] ########### iwl_queue_inc_wrap (179) ###########
+[150483.652818] ########### iwl_pcie_irq_handler (1327) ###########
+[150483.652819] ########### iwl_pcie_rx_handle (1094) ###########
+[150483.652823] ########### iwl_pcie_cmdq_reclaim (1164) ###########
+[150483.652824] ########### iwl_queue_inc_wrap (179) ###########
+[150483.652825] ########### iwl_queue_inc_wrap (179) ###########
+[150483.652890] ########### iwl_queue_inc_wrap (179) ###########
+[150483.654539] ########### iwl_pcie_irq_handler (1327) ###########
+[150483.654540] ########### iwl_pcie_rx_handle (1094) ###########
+[150483.654541] ########### iwl_pcie_cmdq_reclaim (1164) ###########
+[150483.654541] ########### iwl_queue_inc_wrap (179) ###########
+[150483.654542] ########### iwl_queue_inc_wrap (179) ###########
+[150483.654547] ########### iwl_queue_inc_wrap (179) ###########
+[150483.654602] ########### iwl_pcie_irq_handler (1327) ###########
+[150483.654603] ########### iwl_pcie_rx_handle (1094) ###########
+[150483.654604] ########### iwl_pcie_cmdq_reclaim (1164) ###########
+[150483.654604] ########### iwl_queue_inc_wrap (179) ###########
+[150483.654605] ########### iwl_queue_inc_wrap (179) ###########
+[150483.654620] ########### iwl_queue_inc_wrap (179) ###########
+[150483.654621] 	------------ iwl_mvm_exit_d0i3_iterator (1462) -----------
+[150483.654622] 	------------ iwl_mvm_update_d0i3_power_mode (1006) -----------
+[150483.654625] ########### iwl_queue_inc_wrap (179) ###########
+[150483.654627] ########### iwl_queue_inc_wrap (179) ###########
+[150483.654628] 	------------ iwl_mvm_exit_d0i3_iterator (1462) -----------
+[150483.654632] 	------------ ieee80211_reconfig (1781) returned from drv_resume (res = 0)
+[150483.654632] 	------------ ieee80211_reconfig (2060) in wake up
+[150483.654635] 	------------ iwl_mvm_d0i3_exit_work (1566) -----------
+[150483.654637] ########### iwl_queue_inc_wrap (179) ###########
+[150483.654645] 	------------ drv_reconfig_complete (964) -----------
+[150483.654683] ########### iwl_pcie_irq_handler (1327) ###########
+[150483.654684] ########### iwl_pcie_rx_handle (1094) ###########
+[150483.654685] ########### iwl_pcie_cmdq_reclaim (1164) ###########
+[150483.654685] ########### iwl_queue_inc_wrap (179) ###########
+[150483.654686] ########### iwl_queue_inc_wrap (179) ###########
+[150483.654700] ########### iwl_pcie_irq_handler (1327) ###########
+[150483.654701] ########### iwl_pcie_rx_handle (1094) ###########
+[150483.654702] ########### iwl_pcie_cmdq_reclaim (1164) ###########
+[150483.654702] ########### iwl_queue_inc_wrap (179) ###########
+[150483.654703] ########### iwl_queue_inc_wrap (179) ###########
+[150483.654745] ########### iwl_pcie_irq_handler (1327) ###########
+[150483.654746] ########### iwl_pcie_rx_handle (1094) ###########
+[150483.654748] ########### iwl_pcie_cmdq_reclaim (1164) ###########
+[150483.654748] ########### iwl_queue_inc_wrap (179) ###########
+[150483.654749] ########### iwl_queue_inc_wrap (179) ###########
+[150483.654777] ########### iwl_pcie_irq_handler (1327) ###########
+[150483.654778] ########### iwl_pcie_rx_handle (1094) ###########
+[150483.654779] ########### iwl_pcie_cmdq_reclaim (1164) ###########
+[150483.654779] ########### iwl_queue_inc_wrap (179) ###########
+[150483.654779] ########### iwl_queue_inc_wrap (179) ###########
+[150483.654783] 	------------ iwl_mvm_d0i3_enable_tx (1506) -----------
+[150483.654784] 	------------ iwl_mvm_d0i3_enable_tx (1551) -----------
+[150483.654786] ########### iwl_queue_inc_wrap (179) ###########
+[150483.654791] ########### iwl_pcie_irq_handler (1327) ###########
+[150483.654792] ########### iwl_pcie_rx_handle (1094) ###########
+[150483.654808] ########### iwl_pcie_irq_handler (1327) ###########
+[150483.654809] ########### iwl_pcie_rx_handle (1094) ###########
+[150483.655692] ########### iwl_pcie_irq_handler (1327) ###########
+[150483.655693] ########### iwl_pcie_rx_handle (1094) ###########
+[150483.655694] ########### iwl_pcie_cmdq_reclaim (1164) ###########
+[150483.655695] ########### iwl_queue_inc_wrap (179) ###########
+[150483.655696] ########### iwl_queue_inc_wrap (179) ###########
+[150483.655708] ########### iwl_pcie_irq_handler (1327) ###########
+[150483.655709] ########### iwl_pcie_rx_handle (1094) ###########
+[150483.666148] mei_me 0000:00:16.0: hbm: properties response: wrong status = 1
+[150483.666153] mei_me 0000:00:16.0: unexpected reset: dev_state = INIT_CLIENTS
+[150483.697016] ########### iwl_pcie_irq_handler (1327) ###########
+[150483.697017] ########### iwl_pcie_rx_handle (1094) ###########
+[150483.697057] ########### iwl_pcie_irq_handler (1327) ###########
+[150483.697058] ########### iwl_pcie_rx_handle (1094) ###########
+[150483.872822] usb 1-1.2: reset high-speed USB device number 3 using ehci-pci
+[150483.924905] i915: No ACPI video bus found
+[150483.980467] ata6: SATA link down (SStatus 0 SControl 300)
+[150483.988472] ata2: SATA link down (SStatus 0 SControl 300)
+[150483.988496] ata5: SATA link down (SStatus 0 SControl 300)
+[150484.036607] usb 1-1.5: reset high-speed USB device number 5 using ehci-pci
+[150484.204260] usb 1-1.4: reset full-speed USB device number 4 using ehci-pci
+[150484.427901] ata1: SATA link up 3.0 Gbps (SStatus 123 SControl 300)
+[150484.428988] ata1.00: ACPI cmd ef/10:06:00:00:00:00 (SET FEATURES) succeeded
+[150484.428989] ata1.00: ACPI cmd f5/00:00:00:00:00:00 (SECURITY FREEZE LOCK) filtered out
+[150484.428990] ata1.00: ACPI cmd b1/c1:00:00:00:00:00 (DEVICE CONFIGURATION OVERLAY) filtered out
+[150484.429119] ata1.00: ACPI cmd ef/5a:00:00:00:00:a0 (SET FEATURES) succeeded
+[150484.431483] ata1.00: ACPI cmd ef/10:06:00:00:00:00 (SET FEATURES) succeeded
+[150484.431484] ata1.00: ACPI cmd f5/00:00:00:00:00:00 (SECURITY FREEZE LOCK) filtered out
+[150484.431485] ata1.00: ACPI cmd b1/c1:00:00:00:00:00 (DEVICE CONFIGURATION OVERLAY) filtered out
+[150484.431677] ata1.00: ACPI cmd 00/00:00:00:00:00:a0 (NOP) rejected by device (Stat=0x51 Err=0x04)
+[150484.432732] ata1.00: configured for UDMA/100
+[150484.455942] sd 0:0:0:0: [sda] Starting disk
+[150484.555943] usb 1-1.2.1: reset low-speed USB device number 6 using ehci-pci
+[150485.095240] usb 1-1.2.2: reset low-speed USB device number 7 using ehci-pci
+[150485.236235] ########### iwl_pcie_irq_handler (1327) ###########
+[150485.236238] ########### iwl_pcie_rx_handle (1094) ###########
+[150485.236298] ########### iwl_pcie_irq_handler (1327) ###########
+[150485.236300] ########### iwl_pcie_rx_handle (1094) ###########
+[150485.318758] [drm] Enabling RC6 states: RC6 on, RC6p on, RC6pp off
+[150485.382834] PM: resume of devices complete after 1739.747 msecs
+[150485.383392] PM: Finishing wakeup.
+[150485.383392] Restarting tasks ... done.
+[150485.393643] video LNXVIDEO:00: Restoring backlight state
+[150485.485050] ########### iwl_queue_inc_wrap (179) ###########
+[150485.486689] ########### iwl_pcie_irq_handler (1327) ###########
+[150485.486693] ########### iwl_pcie_rx_handle (1094) ###########
+[150485.486699] ########### iwl_mvm_rx_tx_cmd_single (955) ###########
+[150485.486700] ########### iwl_trans_pcie_reclaim (1014) ###########
+[150485.486702] ########### iwl_queue_inc_wrap (179) ###########
+[150485.486719] ########### iwl_queue_inc_wrap (179) ###########
+[150485.486795] ########### iwl_pcie_irq_handler (1327) ###########
+[150485.486797] ########### iwl_pcie_rx_handle (1094) ###########
+[150485.486799] ########### iwl_pcie_cmdq_reclaim (1164) ###########
+[150485.486800] ########### iwl_queue_inc_wrap (179) ###########
+[150485.486801] ########### iwl_queue_inc_wrap (179) ###########
+[150485.494434] ########### iwl_pcie_irq_handler (1327) ###########
+[150485.494439] ########### iwl_pcie_rx_handle (1094) ###########
+[150485.540104] ########### iwl_pcie_irq_handler (1327) ###########
+[150485.540122] ########### iwl_pcie_rx_handle (1094) ###########
+[150485.547780] ########### iwl_pcie_irq_handler (1327) ###########
+[150485.547785] ########### iwl_pcie_rx_handle (1094) ###########
+[150486.849979] e1000e: eth0 NIC Link is Up 1000 Mbps Full Duplex, Flow Control: Rx/Tx
+[150491.835027] dell_wmi: Received unknown WMI event (0x0)
+[150494.447017] ########### iwl_pcie_irq_handler (1327) ###########
+[150494.447026] ########### iwl_pcie_rx_handle (1094) ###########
+[150494.447087] ########### iwl_pcie_irq_handler (1327) ###########
+[150494.447091] ########### iwl_pcie_rx_handle (1094) ###########
+[150495.049015] ########### iwl_pcie_irq_handler (1327) ###########
+[150495.049025] ########### iwl_pcie_rx_handle (1094) ###########
+[150495.049088] ########### iwl_pcie_irq_handler (1327) ###########
+[150495.049092] ########### iwl_pcie_rx_handle (1094) ###########
+[150499.653065] ########### iwl_pcie_irq_handler (1327) ###########
+[150499.653074] ########### iwl_pcie_rx_handle (1094) ###########
+[150499.653149] ########### iwl_pcie_irq_handler (1327) ###########
+[150499.653154] ########### iwl_pcie_rx_handle (1094) ###########
+[150500.266483] ########### iwl_pcie_irq_handler (1327) ###########
+[150500.266493] ########### iwl_pcie_rx_handle (1094) ###########
+[150500.266551] ########### iwl_pcie_irq_handler (1327) ###########
+[150500.266555] ########### iwl_pcie_rx_handle (1094) ###########
+[150500.675339] ########### iwl_pcie_irq_handler (1327) ###########
+[150500.675349] ########### iwl_pcie_rx_handle (1094) ###########
+[150500.675414] ########### iwl_pcie_irq_handler (1327) ###########
+[150500.675419] ########### iwl_pcie_rx_handle (1094) ###########
+[150501.289470] ########### iwl_pcie_irq_handler (1327) ###########
+[150501.289481] ########### iwl_pcie_rx_handle (1094) ###########
+[150501.289542] ########### iwl_pcie_irq_handler (1327) ###########
+[150501.289546] ########### iwl_pcie_rx_handle (1094) ###########
+[150501.752347] ########### iwl_queue_inc_wrap (179) ###########
+[150501.753171] ########### iwl_pcie_irq_handler (1327) ###########
+[150501.753182] ########### iwl_pcie_rx_handle (1094) ###########
+[150501.753193] ########### iwl_pcie_cmdq_reclaim (1164) ###########
+[150501.753197] ########### iwl_queue_inc_wrap (179) ###########
+[150501.753199] ########### iwl_queue_inc_wrap (179) ###########
+[150501.753231] ########### iwl_pcie_irq_handler (1327) ###########
+[150501.753234] ########### iwl_pcie_rx_handle (1094) ###########
+[150501.773717] ########### iwl_queue_inc_wrap (179) ###########
+[150501.778384] ########### iwl_pcie_irq_handler (1327) ###########
+[150501.778390] ########### iwl_pcie_rx_handle (1094) ###########
+[150501.778397] ########### iwl_mvm_rx_tx_cmd_single (955) ###########
+[150501.778399] ########### iwl_trans_pcie_reclaim (1014) ###########
+[150501.778402] ########### iwl_queue_inc_wrap (179) ###########
+[150501.778422] ########### iwl_queue_inc_wrap (179) ###########
+[150501.781291] ########### iwl_pcie_irq_handler (1327) ###########
+[150501.781313] ########### iwl_pcie_rx_handle (1094) ###########
+[150501.781318] ########### iwl_pcie_cmdq_reclaim (1164) ###########
+[150501.781320] ########### iwl_queue_inc_wrap (179) ###########
+[150501.781322] ########### iwl_queue_inc_wrap (179) ###########
+[150501.782294] ########### iwl_pcie_irq_handler (1327) ###########
+[150501.782316] ########### iwl_pcie_rx_handle (1094) ###########
+[150501.789986] ########### iwl_pcie_irq_handler (1327) ###########
+[150501.789993] ########### iwl_pcie_rx_handle (1094) ###########
+[150501.806107] ########### iwl_pcie_irq_handler (1327) ###########
+[150501.806114] ########### iwl_pcie_rx_handle (1094) ###########
+[150501.813759] ########### iwl_pcie_irq_handler (1327) ###########
+[150501.813767] ########### iwl_pcie_rx_handle (1094) ###########
+[150501.856732] ########### iwl_queue_inc_wrap (179) ###########
+[150501.856856] ########### iwl_pcie_irq_handler (1327) ###########
+[150501.856860] ########### iwl_pcie_rx_handle (1094) ###########
+[150501.856865] ########### iwl_pcie_cmdq_reclaim (1164) ###########
+[150501.856867] ########### iwl_queue_inc_wrap (179) ###########
+[150501.856870] ########### iwl_queue_inc_wrap (179) ###########
+[150501.856960] ########### iwl_queue_inc_wrap (179) ###########
+[150501.858572] ########### iwl_pcie_irq_handler (1327) ###########
+[150501.858578] ########### iwl_pcie_rx_handle (1094) ###########
+[150501.858583] ########### iwl_pcie_cmdq_reclaim (1164) ###########
+[150501.858586] ########### iwl_queue_inc_wrap (179) ###########
+[150501.858587] ########### iwl_queue_inc_wrap (179) ###########
+[150501.861364] ########### iwl_queue_inc_wrap (179) ###########
+[150501.862573] ########### iwl_pcie_irq_handler (1327) ###########
+[150501.862578] ########### iwl_pcie_rx_handle (1094) ###########
+[150501.862584] ########### iwl_mvm_rx_tx_cmd_single (955) ###########
+[150501.862586] ########### iwl_trans_pcie_reclaim (1014) ###########
+[150501.862589] ########### iwl_queue_inc_wrap (179) ###########
+[150501.870218] ########### iwl_pcie_irq_handler (1327) ###########
+[150501.870225] ########### iwl_pcie_rx_handle (1094) ###########
+[150501.957363] ########### iwl_queue_inc_wrap (179) ###########
+[150501.958875] ########### iwl_pcie_irq_handler (1327) ###########
+[150501.958883] ########### iwl_pcie_rx_handle (1094) ###########
+[150501.958890] ########### iwl_mvm_rx_tx_cmd_single (955) ###########
+[150501.958892] ########### iwl_trans_pcie_reclaim (1014) ###########
+[150501.958896] ########### iwl_queue_inc_wrap (179) ###########
+[150501.966558] ########### iwl_pcie_irq_handler (1327) ###########
+[150501.966566] ########### iwl_pcie_rx_handle (1094) ###########
+[150501.982576] ########### iwl_queue_inc_wrap (179) ###########
+[150501.982750] ########### iwl_queue_inc_wrap (179) ###########
+[150501.989027] ########### iwl_pcie_irq_handler (1327) ###########
+[150501.989048] ########### iwl_pcie_rx_handle (1094) ###########
+[150501.989053] ########### iwl_mvm_rx_tx_cmd_single (955) ###########
+[150501.989056] ########### iwl_trans_pcie_reclaim (1014) ###########
+[150501.989059] ########### iwl_queue_inc_wrap (179) ###########
+[150501.994320] ########### iwl_pcie_irq_handler (1327) ###########
+[150501.994340] ########### iwl_pcie_rx_handle (1094) ###########
+[150501.994345] ########### iwl_mvm_rx_tx_cmd_single (955) ###########
+[150501.994347] ########### iwl_trans_pcie_reclaim (1014) ###########
+[150501.994350] ########### iwl_queue_inc_wrap (179) ###########
+[150502.002029] ########### iwl_pcie_irq_handler (1327) ###########
+[150502.002036] ########### iwl_pcie_rx_handle (1094) ###########
+[150502.007235] ########### iwl_pcie_irq_handler (1327) ###########
+[150502.007256] ########### iwl_pcie_rx_handle (1094) ###########
+[150502.010210] ########### iwl_pcie_irq_handler (1327) ###########
+[150502.010230] ########### iwl_pcie_rx_handle (1094) ###########
+[150502.013534] ########### iwl_pcie_irq_handler (1327) ###########
+[150502.013541] ########### iwl_pcie_rx_handle (1094) ###########
+[150502.013611] ########### iwl_queue_inc_wrap (179) ###########
+[150502.014904] ########### iwl_pcie_irq_handler (1327) ###########
+[150502.014940] ########### iwl_pcie_rx_handle (1094) ###########
+[150502.014945] ########### iwl_mvm_rx_tx_cmd_single (955) ###########
+[150502.014947] ########### iwl_trans_pcie_reclaim (1014) ###########
+[150502.014950] ########### iwl_queue_inc_wrap (179) ###########
+[150502.015107] ########### iwl_pcie_irq_handler (1327) ###########
+[150502.015143] ########### iwl_pcie_rx_handle (1094) ###########
+[150502.015178] ########### iwl_queue_inc_wrap (179) ###########
+[150502.016769] ########### iwl_pcie_irq_handler (1327) ###########
+[150502.016807] ########### iwl_pcie_rx_handle (1094) ###########
+[150502.016812] ########### iwl_mvm_rx_tx_cmd_single (955) ###########
+[150502.016814] ########### iwl_trans_pcie_reclaim (1014) ###########
+[150502.016817] ########### iwl_queue_inc_wrap (179) ###########
+[150502.024496] ########### iwl_pcie_irq_handler (1327) ###########
+[150502.024502] ########### iwl_pcie_rx_handle (1094) ###########
+[150502.109540] ########### iwl_pcie_irq_handler (1327) ###########
+[150502.109559] ########### iwl_pcie_rx_handle (1094) ###########
+[150502.117307] ########### iwl_pcie_irq_handler (1327) ###########
+[150502.117316] ########### iwl_pcie_rx_handle (1094) ###########
+[150502.232969] ########### iwl_queue_inc_wrap (179) ###########
+[150502.240066] ########### iwl_pcie_irq_handler (1327) ###########
+[150502.240084] ########### iwl_pcie_rx_handle (1094) ###########
+[150502.240091] ########### iwl_mvm_rx_tx_cmd_single (955) ###########
+[150502.240094] ########### iwl_trans_pcie_reclaim (1014) ###########
+[150502.240097] ########### iwl_queue_inc_wrap (179) ###########
+[150502.247758] ########### iwl_pcie_irq_handler (1327) ###########
+[150502.247765] ########### iwl_pcie_rx_handle (1094) ###########
+[150502.250814] ########### iwl_pcie_irq_handler (1327) ###########
+[150502.250822] ########### iwl_pcie_rx_handle (1094) ###########
+[150502.250877] ########### iwl_queue_inc_wrap (179) ###########
+[150502.252637] ########### iwl_pcie_irq_handler (1327) ###########
+[150502.252645] ########### iwl_pcie_rx_handle (1094) ###########
+[150502.252651] ########### iwl_mvm_rx_tx_cmd_single (955) ###########
+[150502.252653] ########### iwl_trans_pcie_reclaim (1014) ###########
+[150502.252656] ########### iwl_queue_inc_wrap (179) ###########
+[150502.260320] ########### iwl_pcie_irq_handler (1327) ###########
+[150502.260338] ########### iwl_pcie_rx_handle (1094) ###########
+[150502.317366] ########### iwl_pcie_irq_handler (1327) ###########
+[150502.317373] ########### iwl_pcie_rx_handle (1094) ###########
+[150502.325080] ########### iwl_pcie_irq_handler (1327) ###########
+[150502.325089] ########### iwl_pcie_rx_handle (1094) ###########
+[150502.482991] ########### iwl_queue_inc_wrap (179) ###########
+[150502.489146] ########### iwl_pcie_irq_handler (1327) ###########
+[150502.489153] ########### iwl_pcie_rx_handle (1094) ###########
+[150502.489160] ########### iwl_mvm_rx_tx_cmd_single (955) ###########
+[150502.489162] ########### iwl_trans_pcie_reclaim (1014) ###########
+[150502.489166] ########### iwl_queue_inc_wrap (179) ###########
+[150502.489186] ########### iwl_queue_inc_wrap (179) ###########
+[150502.489308] ########### iwl_pcie_irq_handler (1327) ###########
+[150502.489326] ########### iwl_pcie_rx_handle (1094) ###########
+[150502.489332] ########### iwl_pcie_cmdq_reclaim (1164) ###########
+[150502.489335] ########### iwl_queue_inc_wrap (179) ###########
+[150502.489336] ########### iwl_queue_inc_wrap (179) ###########
+[150502.497004] ########### iwl_pcie_irq_handler (1327) ###########
+[150502.497011] ########### iwl_pcie_rx_handle (1094) ###########
+[150502.500344] ########### iwl_pcie_irq_handler (1327) ###########
+[150502.500354] ########### iwl_pcie_rx_handle (1094) ###########
+[150502.500408] ########### iwl_queue_inc_wrap (179) ###########
+[150502.501486] ########### iwl_pcie_irq_handler (1327) ###########
+[150502.501495] ########### iwl_pcie_rx_handle (1094) ###########
+[150502.501500] ########### iwl_mvm_rx_tx_cmd_single (955) ###########
+[150502.501502] ########### iwl_trans_pcie_reclaim (1014) ###########
+[150502.501505] ########### iwl_queue_inc_wrap (179) ###########
+[150502.509183] ########### iwl_pcie_irq_handler (1327) ###########
+[150502.509189] ########### iwl_pcie_rx_handle (1094) ###########
+[150502.580448] ########### iwl_queue_inc_wrap (179) ###########
+[150502.582008] ########### iwl_pcie_irq_handler (1327) ###########
+[150502.582019] ########### iwl_pcie_rx_handle (1094) ###########
+[150502.582027] ########### iwl_mvm_rx_tx_cmd_single (955) ###########
+[150502.582030] ########### iwl_trans_pcie_reclaim (1014) ###########
+[150502.582034] ########### iwl_queue_inc_wrap (179) ###########
+[150502.589758] ########### iwl_pcie_irq_handler (1327) ###########
+[150502.589769] ########### iwl_pcie_rx_handle (1094) ###########
+[150502.683170] ########### iwl_queue_inc_wrap (179) ###########
+[150502.685962] ########### iwl_pcie_irq_handler (1327) ###########
+[150502.685973] ########### iwl_pcie_rx_handle (1094) ###########
+[150502.685981] ########### iwl_mvm_rx_tx_cmd_single (955) ###########
+[150502.685984] ########### iwl_trans_pcie_reclaim (1014) ###########
+[150502.685989] ########### iwl_queue_inc_wrap (179) ###########
+[150502.693652] ########### iwl_pcie_irq_handler (1327) ###########
+[150502.693661] ########### iwl_pcie_rx_handle (1094) ###########
+[150502.728192] ########### iwl_pcie_irq_handler (1327) ###########
+[150502.728199] ########### iwl_pcie_rx_handle (1094) ###########
+[150502.735947] ########### iwl_pcie_irq_handler (1327) ###########
+[150502.735959] ########### iwl_pcie_rx_handle (1094) ###########
+[150502.957996] ########### iwl_queue_inc_wrap (179) ###########
+[150502.959940] ########### iwl_pcie_irq_handler (1327) ###########
+[150502.959948] ########### iwl_pcie_rx_handle (1094) ###########
+[150502.959957] ########### iwl_mvm_rx_tx_cmd_single (955) ###########
+[150502.959970] ########### iwl_trans_pcie_reclaim (1014) ###########
+[150502.959975] ########### iwl_queue_inc_wrap (179) ###########
+[150502.967622] ########### iwl_pcie_irq_handler (1327) ###########
+[150502.967631] ########### iwl_pcie_rx_handle (1094) ###########
+[150503.055654] ########### iwl_queue_inc_wrap (179) ###########
+[150503.057645] ########### iwl_pcie_irq_handler (1327) ###########
+[150503.057656] ########### iwl_pcie_rx_handle (1094) ###########
+[150503.057664] ########### iwl_mvm_rx_tx_cmd_single (955) ###########
+[150503.057667] ########### iwl_trans_pcie_reclaim (1014) ###########
+[150503.057672] ########### iwl_queue_inc_wrap (179) ###########
+[150503.065403] ########### iwl_pcie_irq_handler (1327) ###########
+[150503.065414] ########### iwl_pcie_rx_handle (1094) ###########
+[150503.132327] ########### iwl_pcie_irq_handler (1327) ###########
+[150503.132338] ########### iwl_pcie_rx_handle (1094) ###########
+[150503.139287] ########### iwl_pcie_irq_handler (1327) ###########
+[150503.139297] ########### iwl_pcie_rx_handle (1094) ###########
+[150503.147034] ########### iwl_pcie_irq_handler (1327) ###########
+[150503.147045] ########### iwl_pcie_rx_handle (1094) ###########
+[150503.744157] ########### iwl_pcie_irq_handler (1327) ###########
+[150503.744166] ########### iwl_pcie_rx_handle (1094) ###########
+[150503.744229] ########### iwl_pcie_irq_handler (1327) ###########
+[150503.744237] ########### iwl_pcie_rx_handle (1094) ###########
+[150503.756792] ########### iwl_queue_inc_wrap (179) ###########
+[150503.760555] ########### iwl_pcie_irq_handler (1327) ###########
+[150503.760577] ########### iwl_pcie_rx_handle (1094) ###########
+[150503.760582] ########### iwl_mvm_rx_tx_cmd_single (955) ###########
+[150503.760585] ########### iwl_trans_pcie_reclaim (1014) ###########
+[150503.760588] ########### iwl_queue_inc_wrap (179) ###########
+[150503.768267] ########### iwl_pcie_irq_handler (1327) ###########
+[150503.768274] ########### iwl_pcie_rx_handle (1094) ###########
+[150503.849207] ########### iwl_pcie_irq_handler (1327) ###########
+[150503.849213] ########### iwl_pcie_rx_handle (1094) ###########
+[150503.856890] ########### iwl_pcie_irq_handler (1327) ###########
+[150503.856899] ########### iwl_pcie_rx_handle (1094) ###########
+[150504.956266] ########### iwl_queue_inc_wrap (179) ###########
+[150504.958139] ########### iwl_pcie_irq_handler (1327) ###########
+[150504.958147] ########### iwl_pcie_rx_handle (1094) ###########
+[150504.958154] ########### iwl_mvm_rx_tx_cmd_single (955) ###########
+[150504.958157] ########### iwl_trans_pcie_reclaim (1014) ###########
+[150504.958161] ########### iwl_queue_inc_wrap (179) ###########
+[150504.965827] ########### iwl_pcie_irq_handler (1327) ###########
+[150504.965834] ########### iwl_pcie_rx_handle (1094) ###########
+[150505.127870] ########### iwl_queue_inc_wrap (179) ###########
+[150505.131233] ########### iwl_pcie_irq_handler (1327) ###########
+[150505.131239] ########### iwl_pcie_rx_handle (1094) ###########
+[150505.131246] ########### iwl_mvm_rx_tx_cmd_single (955) ###########
+[150505.131248] ########### iwl_trans_pcie_reclaim (1014) ###########
+[150505.131252] ########### iwl_queue_inc_wrap (179) ###########
+[150505.138932] ########### iwl_pcie_irq_handler (1327) ###########
+[150505.138938] ########### iwl_pcie_rx_handle (1094) ###########
+[150505.180571] ########### iwl_pcie_irq_handler (1327) ###########
+[150505.180580] ########### iwl_pcie_rx_handle (1094) ###########
+[150505.188270] ########### iwl_pcie_irq_handler (1327) ###########
+[150505.188292] ########### iwl_pcie_rx_handle (1094) ###########
+[150505.828662] ########### iwl_queue_inc_wrap (179) ###########
+[150505.832845] ########### iwl_pcie_irq_handler (1327) ###########
+[150505.832852] ########### iwl_pcie_rx_handle (1094) ###########
+[150505.832860] ########### iwl_mvm_rx_tx_cmd_single (955) ###########
+[150505.832862] ########### iwl_trans_pcie_reclaim (1014) ###########
+[150505.832865] ########### iwl_queue_inc_wrap (179) ###########
+[150505.832885] ########### iwl_queue_inc_wrap (179) ###########
+[150505.833022] ########### iwl_pcie_irq_handler (1327) ###########
+[150505.833029] ########### iwl_pcie_rx_handle (1094) ###########
+[150505.833035] ########### iwl_pcie_cmdq_reclaim (1164) ###########
+[150505.833037] ########### iwl_queue_inc_wrap (179) ###########
+[150505.833039] ########### iwl_queue_inc_wrap (179) ###########
+[150505.840709] ########### iwl_pcie_irq_handler (1327) ###########
+[150505.840716] ########### iwl_pcie_rx_handle (1094) ###########

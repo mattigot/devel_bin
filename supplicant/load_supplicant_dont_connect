@@ -1,0 +1,3 @@
+#sudo wpa_supplicant -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf -m /etc/wpa_supplicant/wpa_supplicant.conf -D nl80211 -g /tmp/wpa_supplicat –G adm -ddd
+sudo wpa_supplicant -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf -m /etc/wpa_supplicant/wpa_supplicant.conf -D nl80211 -g /tmp/wpa_supplicat –G adm -ddd
+#sudo wpa_supplicant -i wlan0 -c ~/bin/suppConfFiles/wpa_supplicant.conf -m /etc/wpa_supplicant/wpa_supplicant.conf -D nl80211 -g /tmp/wpa_supplicat –G adm -ddd

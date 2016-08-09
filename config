@@ -1,0 +1,18 @@
+host imc-gerrit
+ user          mgottlie
+ hostname      gerrit.rds.intel.com
+ identityfile  ~/.ssh/id_rsa.pub
+ port          29418
+
+host imc-mgerrit
+ user          mgottlie
+ hostname      musxgits01.imu.intel.com
+ identityfile  ~/.ssh/id_rsa.pub
+ port          29418
+
+host musxgits01.imu.intel.com
+ user          mgottlie
+ hostname      musxgits01.imu.intel.com
+ identityfile  ~/.ssh/id_rsa.pub
+ port          29418
+

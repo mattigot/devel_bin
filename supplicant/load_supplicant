@@ -1,0 +1,15 @@
+#!/bin/bash -x
+
+SSID=$1
+
+if [ -z $1 ]
+	then
+		SSID="oren-ap"
+fi
+#sudo wpa_supplicant -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf -m /etc/wpa_supplicant/wpa_supplicant.conf -D nl80211 -g /tmp/wpa_supplicat –G adm -ddd
+#sudo wpa_supplicant -i wlan0 -c ~/bin/suppConfFiles/ChenAP_gn.conf -m /etc/wpa_supplicant/wpa_supplicant.conf -D nl80211 -g /tmp/wpa_supplicat –G adm -ddd
+sudo wpa_supplicant -i wlan0 -c ~/bin/suppConfFiles/$SSID.conf -m /etc/wpa_supplicant/wpa_supplicant.conf -D nl80211 -g /tmp/wpa_global –G adm -ddd
+#sudo wpa_supplicant -i wlan0 -c ~/bin/suppConfFiles/clashofclans.conf -m /etc/wpa_supplicant/wpa_supplicant.conf -D nl80211 -g /tmp/wpa_supplicat –G adm -ddd
+#sudo wpa_supplicant -i wlan0 -c ~/bin/suppConfFiles/netgear-matti-5g.conf -m /etc/wpa_supplicant/wpa_supplicant.conf -D nl80211 -g /tmp/wpa_supplicat –G adm -d
+#sudo wpa_supplicant -i wlan0 -c ~/bin/suppConfFiles/DEV-WPA2-CCMP-PSK.conf -m /etc/wpa_supplicant/wpa_supplicant.conf -D nl80211 -g /tmp/wpa_supplicat –G adm -ddd
+#sudo wpa_supplicant -i wlan0 -c ~/bin/suppConfFiles/MATTI-AP.conf -m /etc/wpa_supplicant/wpa_supplicant.conf -D nl80211 -g /tmp/wpa_supplicat –G adm 

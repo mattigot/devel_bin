@@ -1,0 +1,51 @@
+#!/bin/bash -x
+#
+#NVM_FILE="iwl_nvm.bin"
+#DEBUG="0x1800020"
+#DEBUG="0x08000000"
+#DEBUG="0x00000001"
+#DEBUG="0x00010000"
+DEBUG="0x8000000"
+#DEBUG="0xfffffff"
+
+
+sudo dmesg -c
+sudo modprobe iwlxvt -r
+sudo modprobe iwlmvm -r
+sudo modprobe iwlwifi -r
+
+#sleep 1
+
+#sudo rmmod sdhci_pci
+#sudo rmmod sdhci_acpi
+#sleep 1
+
+#sudo echo -ne '\x80' | sudo dd of=/dev/port seek=$((0xb6b)) bs=1 count=1
+
+#sudo modprobe sdhci_pci
+#sudo modprobe sdhci_acpi
+
+#sleep 2
+
+#echo "sudo modprobe iwlwifi"
+sudo modprobe iwlwifi debug=$DEBUG $1
+#sudo modprobe iwlwifi
+sleep 1
+sudo ifconfig wlan0 up
+ifconfig
+
+#sudo iw phy0 wowlan enable any
+#sudo iw phy0 wowlan enable magic-packet
+#sudo iw phy0 wowlan enable disconnect
+#sudo iw phy0 wowlan enable net-detect interval 10000 matches ssid matti-ap active
+#sudo iw phy0 wowlan show
+
+
+#echo "sudo iw phy0 interface add moni0 type monitor"
+#sudo iw phy0 interface add moni0 type monitor
+#echo "sudo ifconfig moni0 up"
+#sudo ifconfig moni0 up
+#echo "sudo killall wireshark"
+#sudo killall wireshark
+#echo "sudo wireshark &"
+#sudo wireshark &

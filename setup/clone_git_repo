@@ -1,0 +1,15 @@
+#!/bin/bash -x
+
+mkdir ~/devel
+mkdir ~/devel/driver
+mkdir ~/devel/hostap
+mkdir ~/devel/fw
+
+git clone ssh://mgottlie@git-amr-3.devtools.intel.com:29418/iwlwifi-stack-dev ~/devel/driver/iwlwifi-stack-dev
+git clone ssh://mgottlie@git-ger-8.devtools.intel.com:29418/iwlwifi-stack-public-modrename ~/devel/driver/iwlwifi-stack-public-modrename
+
+git clone ssh://mgottlie@git-amr-3.devtools.intel.com:29418/iwlwifi-hostap ~/devel/hostap/iwlwifi-hostap
+git clone ssh://mgottlie@git-ger-8.devtools.intel.com:29418/iwlwifi-hostap-public ~/devel/hostap/iwlwifi-hostap-public
+
+git clone ssh://mgottlie@git-ger-8.devtools.intel.com:29418/iwlwifi-fw-binary-public ~/devel/fw/iwlwifi-fw-binary-public
+

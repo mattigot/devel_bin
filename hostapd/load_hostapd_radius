@@ -1,0 +1,11 @@
+#!/bin/bash
+
+CONF_FILE=~/bin/hostapd/softap.conf
+AUTH_DIR=~/devel/hostap/iwlwifi-hostap/hostapd
+
+sudo killall wpa_supplicant
+sudo killall hostapd
+sleep 1
+
+sudo hostapd -ddt $AUTH_DIR/auth_serv/as.conf  $AUTH_DIR/auth_serv/as2.conf
+

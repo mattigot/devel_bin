@@ -1,0 +1,29 @@
+#!/bin/sh
+	
+echo ">> adb kill-server"
+adb kill-server
+sleep 3
+echo ">> adb connect 10.12.217.186"
+adb connect 10.12.217.186
+
+echo "adb shell dmesg -c &"
+adb shell dmesg -c &
+
+echo ">> adb shell am startservice --user 0 -a android.intent.action.run -n com.intel.mwg/com.intel.Dispatcher -e ITE_METHOD DUT.WiFi.EnableDevice"
+adb shell am startservice --user 0 -a android.intent.action.run -n com.intel.mwg/com.intel.Dispatcher -e ITE_METHOD DUT.WiFi.EnableDevice
+sleep 5
+
+echo "adb shell am startservice --user 0 -a android.intent.action.run -n com.intel.mwg/com.intel.Dispatcher -e ITE_METHOD DUT.WiFiProfile.DeleteAllProfiles"
+adb shell am startservice --user 0 -a android.intent.action.run -n com.intel.mwg/com.intel.Dispatcher -e ITE_METHOD DUT.WiFiProfile.DeleteAllProfiles
+
+
+echo "adb shell am startservice --user 0 -a android.intent.action.run -n com.intel.mwg/com.intel.Dispatcher -e ITE_METHOD DUT.WiFiProfile.CreateProfile -e ARG SSID:$1 ,PASSWORD:none,SECURITY:Open.Personal.None"
+adb shell am startservice --user 0 -a android.intent.action.run -n com.intel.mwg/com.intel.Dispatcher -e ITE_METHOD DUT.WiFiProfile.CreateProfile -e ARG SSID:$1,PASSWORD:none,SECURITY:Open.Personal.None
+sleep 1
+
+echo "adb shell am startservice --user 0 -a android.intent.action.run -n com.intel.mwg/com.intel.Dispatcher -e ITE_METHOD DUT.WiFiProfile.ConnectProfile -e ARG SSID:$1"
+adb shell am startservice --user 0 -a android.intent.action.run -n com.intel.mwg/com.intel.Dispatcher -e ITE_METHOD DUT.WiFiProfile.ConnectProfile -e ARG SSID:$1
+sleep 5
+
+c=`adb shell netcfg | grep wlan0 | awk '{print $3}'`
+ip=${c%%/*}

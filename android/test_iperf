@@ -1,0 +1,22 @@
+echo "killall wpa_supplicant"
+killall wpa_supplicant
+
+echo "rmmod iwlmvm"
+rmmod iwlmvm
+echo "rmmod iwlwifi"
+rmmod iwlwifi
+
+echo "insmod /lib/modules/3.8.0-android-x86+/updates/drivers/net/wireless/iwlwifi/iwlwifi.ko"
+insmod 	/lib/modules/3.8.0-android-x86+/updates/drivers/net/wireless/iwlwifi/iwlwifi.ko
+echo "insmod /lib/modules/3.8.0-android-x86+/updates/drivers/net/wireless/iwlwifi/mvm/iwlmvm.ko"
+insmod 	/lib/modules/3.8.0-android-x86+/updates/drivers/net/wireless/iwlwifi/mvm/iwlmvm.ko
+
+sleep 1
+
+echo "wpa_supplicant -i wlan0 -c /system/bin/wpa_supplicant.conf -dd B"
+wpa_supplicant -i wlan0 -c /system/bin/wpa_supplicant.conf -dd B
+
+sleep 3
+
+perf -s -u -w 64K -p 5111 -l 1370 -P 1 -i 1 -f m -S 0
+#iperf -c 172.16.111.111 -u -b 1M -t 30 -w 64K -p 5111 -l 1370 -P 1 -i 1 -f m -Si 0 > iperf.udp.TX.5111 2>&1 & echo $!

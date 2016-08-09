@@ -1,0 +1,6 @@
+#! /bin/bash
+
+
+PATCH_FILE=$(git format-patch -1)
+/home/tester/devel/hostap/hostap/intc_scripts/checkpatch.pl --no-tree --strict --ignore=BLOCK_COMMENT_STYLE --ignore=NETWORKING_BLOCK_COMMENT_STYLE $PATCH_FILE
+rm $PATCH_FILE

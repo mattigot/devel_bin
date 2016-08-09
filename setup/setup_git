@@ -1,0 +1,5 @@
+#!/bin/bash -x
+
+git config --global user.email "matti.gottlieb@intel.com"
+git config --global user.name "Matti Gottlieb"
+

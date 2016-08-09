@@ -1,0 +1,22 @@
+#!/bin/sh
+BUILD="wlan-linux-official-"$1
+SUPP_BUILD="$BUILD-generic"
+SUP="s"
+
+echo "make clean"
+make clean
+echo "git clean -fdx"
+git clean -fdx
+
+if [ "$2" =  "$SUP" ];then
+	echo "git checkout -B $SUPP_BUILD"
+	git checkout $SUPP_BUILD
+	echo "cp intc_defconfigs/core .config"
+	cp intc_defconfigs/core .config 
+else
+	echo "git checkout $BUILD"
+	git checkout $BUILD
+	echo "make defconfig-iwlwifi"
+	make defconfig-iwlwifi
+fi
+

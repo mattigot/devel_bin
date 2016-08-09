@@ -1,0 +1,7 @@
+#!/bin/bash -x
+
+sshpass -p tester scp ~/.ssh/config tester@$1:~/.ssh
+sshpass -p tester scp ~/.bashrc tester@$1:~/
+sshpass -p tester scp ~/.vimrc tester@$1:~/
+sshpass -p tester scp -r ~/.vim tester@$1:~/
+sshpass -p tester scp -r ~/bin tester@$1:~/

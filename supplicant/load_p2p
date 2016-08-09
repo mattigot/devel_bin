@@ -1,0 +1,23 @@
+#!/bin/sh
+echo "sudo killall wpa_supplicant"
+sudo killall wpa_supplicant
+echo "sudo modprobe -r iwlmvm"
+sudo modprobe -r iwlmvm
+sleep 1
+echo "sudo modprobe iwlwifi"
+sudo modprobe iwlwifi
+sleep 2
+#sudo wpa_supplicant -T -s -iwlan0 -c ~/bin/suppConfFiles/Avi-WPAN1-a.conf -m ~/bin/wpa_supplicant_p2p.conf -B -d -D nl80211 -g /tmp/wpa_supplicat –G adm 
+echo "sudo wpa_supplicant -T -s -iwlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf -m ~/bin/wpa_supplicant_p2p.conf -B -d -Dnl80211 -g /tmp/wpa_supplicant -G adm"
+sudo wpa_supplicant -T -s -iwlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf -m ~/bin/wpa_supplicant_p2p.conf -B -d -Dnl80211 -g /tmp/wpa_supplicant -G adm
+
+#sudo wpa_supplicant -T -s -i wlan0 -c  ~/bin/wpa_supplicant_p2p.conf -B -dd -Dnl80211
+#sudo wpa_supplicant -i wlan0 -c  ~/bin/wpa_supplicant_p2p.conf -B -d -Dnl80211
+#sudo iw dev wlan0 connect -w "DEV-OPEN-GN"
+
+#sleep 4
+#sudo dhclient wlan0
+#sleep 4
+echo "Done."
+sudo wpa_cli -g /tmp/wpa_supplicant -G adm
+

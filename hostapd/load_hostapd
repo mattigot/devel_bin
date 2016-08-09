@@ -1,0 +1,9 @@
+#!/bin/bash
+
+CONF_FILE=~/bin/hostapd/softap.conf
+
+sudo killall wpa_supplicant
+sudo killall hostapd
+sleep 1
+sudo hostapd -dd -t $CONF_FILE
+

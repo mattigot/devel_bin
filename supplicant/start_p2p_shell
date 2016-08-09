@@ -1,0 +1,10 @@
+sudo dmesg -c
+
+gnome-terminal \
+	--tab-with-profile=Titleable -t "General" \
+	--tab-with-profile=Titleable -t "driver" \
+	--tab-with-profile=Titleable -t "P2P/supplicant" \
+	--tab-with-profile=Titleable -t "wlan0"	\
+	--tab-with-profile=Titleable -t "p2p0" \
+	--tab-with-profile=Titleable -t "error"
+

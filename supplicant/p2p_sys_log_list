@@ -1,0 +1,7 @@
+sudo tail -f /var/log/syslog
+sudo tail -f /var/log/syslog | grep -E "wlan0|kernel"
+sudo tail -f /var/log/syslog | grep -E "P2P|supplicant"
+sudo tail -f /var/log/syslog | grep -E "wlan0"
+sudo tail -f /var/log/syslog | grep -E "p2p0"
+sudo tail -f /var/log/syslog | grep -E "p2p-p2p0-0"
+sudo tail -f /var/log/syslog | grep -E "fail|Fail|Error|error|isconnect|eauth|reason|imeout"

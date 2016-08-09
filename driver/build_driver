@@ -1,0 +1,8 @@
+#!/bin/bash -x
+
+sudo modprobe iwlmvm -r
+sudo modprobe iwlwifi -r
+make -j8
+sudo make install
+
+

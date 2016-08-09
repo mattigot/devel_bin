@@ -1,0 +1,17 @@
+
+#Desktop
+sshpass -p tester scp $1 tester@10.12.184.130:$2
+sshpass -p tester scp $1 tester@10.12.184.131:$2
+#sshpass -p tester scp $1 tester@10.12.184.135:$2
+sshpass -p tester scp $1 tester@10.12.184.71:$2
+
+#NUC
+sshpass -p tester scp $1 tester@10.12.184.76:$2
+sshpass -p tester scp $1 tester@10.12.184.79:$2
+
+
+sshpass -p tester scp $1 tester@10.12.184.129:$2
+sshpass -p tester scp $1 tester@10.12.184.73:$2
+sshpass -p tester scp $1 tester@10.12.184.65:$2
+
+

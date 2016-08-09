@@ -1,0 +1,6 @@
+echo "adb push ~/Desktop/XVT_BIN/libiwlwifiapi.so /system/lib"
+adb push ~/Desktop/XVT_BIN/libiwlwifiapi.so /system/lib
+echo "adb push ~/Desktop/XVT_BIN/libnl-genl-3.so /system/lib"
+adb push ~/Desktop/XVT_BIN/libnl-genl-3.so /system/lib
+echo "adb push ~/Desktop/XVT_BIN/libnl-3.so /system/lib"
+adb push ~/Desktop/XVT_BIN/libnl-3.so /system/lib

@@ -1,0 +1,38 @@
+#! /bin/bash
+
+#
+# Netconsole Installer
+#
+
+# Get reciever ip from DNS or user
+if [ -z $1 ]; then
+	REC_IP=$(net lookup dshaish-e6430.jer.intel.com)
+#	REC_IP=$(net lookup mgottlie2.intel.com)
+else
+	REC_IP=$1
+fi
+
+# Get target port from user or default
+if [ -z $2 ]; then
+	NETCONSOLE_PORT=6666
+else
+	NETCONSOLE_PORT=$2
+fi
+
+# Clean log
+sudo dmesg -c > /dev/null
+
+# Get reciever HW MAC address
+$(ping -c 1 $REC_IP > /dev/null)
+REC_MAC_EX=$(arp -n $REC_IP | awk '{ print $3 }')
+REC_MAC=$( echo $REC_MAC_EX | awk '{ print $2 }')
+
+# Get local IP and Interface
+SEND_IF=$(ifconfig  | grep eth | awk '{print $1}')
+SEND_IP=$(ifconfig  | grep eth -A1 | grep inet | awk -F: '{print $2}' | awk '{print $1}')
+
+echo "$NETCONSOLE_PORT@$SEND_IP/$SEND_IF,$NETCONSOLE_PORT@$REC_IP/$REC_MAC" 
+# Install netconsole
+sudo modprobe -r netconsole
+sudo modprobe netconsole netconsole=$NETCONSOLE_PORT@$SEND_IP/$SEND_IF,$NETCONSOLE_PORT@$REC_IP/$REC_MAC
+dmesg | grep netco

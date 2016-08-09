@@ -1,0 +1,7 @@
+sudo modprobe iwlwifi -r
+sudo modprobe iwlwifi
+sleep 1
+sudo iw wlan0 set type monitor
+sudo ifconfig wlan0 up
+sudo iw wlan0 set freq $1
+sudo wireshark &

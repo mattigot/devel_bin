@@ -1,0 +1,538 @@
+comments:
+
+ww02.1 -- version 17.225.5.1
+
+    - Added support for P2P in TLV feature flags
+    - Fixed uCode version reflected in auto-generated combined Release Notes
+    - Added ability to build TLV-packaging in Windows
+    - Added partial SCP generation when building in Linux
+
+ww13.6 -- version 17.225.3.1
+
+  rebase with DEV/15.0_trunk, rev 38169 version 11.D5
+
++=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+
+Windows Release Notes file is not up to date, these are commits since 11.87
+
+    ------------------------------------------------------------------------
+    r38169 | ischer | 2011-03-24 03:55:14 -0700 (Thu, 24 Mar 2011) | 14 lines
+    
+    Title:deliver JP/MP bring up
+    Detailed description:
+    1. change vals in analog sv drop.
+    2. fix currents in legacy in Marble. 
+    Bug id (if exists):
+    Code\Test plan review by:
+    Regressions (choose): SV/AV/BSS/PIBSS/IBSS
+    Unit tests:
+    System Directed Tests Done:
+    Missing system Directed Tests:
+    Analysis of affected flows:
+    System Test plan done:
+    Missing System Test plan:
+    
+    ------------------------------------------------------------------------
+    r38165 | ybarash | 2011-03-24 03:09:38 -0700 (Thu, 24 Mar 2011) | 11 lines
+    
+    Title:delivering the rest of the fixes from BT HS branch (rev. 34687)
+    Detailed description: in order to fix the 0x1a97 issue that occurs in WHQL, need to deliver the fix from BT HS branch
+    Bug id (if exists):N/A
+    Code\Test plan review by:Ariel, Alla
+    Regressions (choose): WHQL
+    Unit tests:none
+    System Directed Tests Done:none
+    Missing system Directed Tests:none
+    Analysis of affected flows:RLC gets back the antenna when BT moves to disabled mode
+    System Test plan done:none
+    Missing System Test plan:none
+    ------------------------------------------------------------------------
+    r38145 | mzafrany | 2011-03-23 10:49:28 -0700 (Wed, 23 Mar 2011) | 12 lines
+    
+    Title: Alive version 11.D5
+    Detailed description: Alive version of 11.D4 was allocated for MVT drop JP.MP_B0_drop__WW13.3
+    Bug id (if exists):
+    Code\Test plan review by:
+    Regressions (choose): SV/AV/BSS/PIBSS/IBSS
+    Unit tests:
+    System Directed Tests Done:
+    Missing system Directed Tests:
+    Analysis of affected flows:
+    System Test plan done:
+    Missing System Test plan:
+    
+    ------------------------------------------------------------------------
+    r38140 | galla | 2011-03-23 09:39:57 -0700 (Wed, 23 Mar 2011) | 11 lines
+    
+    Title: Fixed scan suspend after scan abort requested + introduced UCODE_SYSASSERT_278D.  
+    Detailed description: Null wakeup callback was switching the scan state machine to suspend state instead of kill the scan. On a system with high traffic driver sets uSuspend_time to a large value (30 beacon intervals == 3000 mSec). In such a case scan abort may take about 3 sec which is much greater than scan abort timeout (0.5 sec) and thus it leads to HMAC_STATUS_SCAN bug.
+    Bug id (if exists): MWG100139451
+    Code\Test plan review by: Olga, Ariel
+    Regressions (choose): 
+    Unit tests: none
+    System Directed Tests Done: none
+    Missing system Directed Tests:
+    Analysis of affected flows: scan abort, scan suspend flows.
+    System Test plan done:
+    Missing System Test plan:
+    ------------------------------------------------------------------------
+    r38076 | amasri | 2011-03-22 06:45:22 -0700 (Tue, 22 Mar 2011) | 12 lines
+    
+    Title: rename aux_funcs.h to auxFuncs.h
+    Detailed description: align file name with 15.x
+    Bug id (if exists):
+    Code\Test plan review by:
+    Regressions (choose): SV/AV/BSS/PIBSS/IBSS
+    Unit tests:
+    System Directed Tests Done:
+    Missing system Directed Tests:
+    Analysis of affected flows:
+    System Test plan done:
+    Missing System Test plan:
+    
+    ------------------------------------------------------------------------
+    r38068 | ischer | 2011-03-22 06:26:04 -0700 (Tue, 22 Mar 2011) | 12 lines
+    
+    Title:TRM chain set kick 
+    Detailed description: on perdic dc disabled - TRM chain set kick forced.
+    Bug id (if exists):
+    Code\Test plan review by:eperi
+    Regressions (choose): SV/AV/BSS/PIBSS/IBSS
+    Unit tests:
+    System Directed Tests Done:
+    Missing system Directed Tests:
+    Analysis of affected flows:
+    System Test plan done:
+    Missing System Test plan:
+    
+    ------------------------------------------------------------------------
+    r37953 | omirensk | 2011-03-20 03:49:46 -0700 (Sun, 20 Mar 2011) | 12 lines
+    
+    Title: 11.D3 https://subversion.iil.intel.com/mg/mwg/rtf/MWG_UCODE/DEV/tags/TUG_ww13_d1_ver_11_D3
+    Detailed description:
+    Bug id (if exists):
+    Code\Test plan review by:
+    Regressions (choose): SV/AV/BSS/PIBSS/IBSS
+    Unit tests:
+    System Directed Tests Done:
+    Missing system Directed Tests:
+    Analysis of affected flows:
+    System Test plan done:
+    Missing System Test plan:
+    
+    ------------------------------------------------------------------------
+    r37895 | zchen29 | 2011-03-17 03:36:34 -0700 (Thu, 17 Mar 2011) | 1 line
+    
+    Reverted CI 37553 since it broke WFD GONG test (SYSASSERT 1BD6).
+    ------------------------------------------------------------------------
+    r37885 | ischer | 2011-03-17 02:22:52 -0700 (Thu, 17 Mar 2011) | 12 lines
+    
+    Title: Alive 11.D2
+    Detailed description:
+    Bug id (if exists):
+    Code\Test plan review by:
+    Regressions (choose): SV/AV/BSS/PIBSS/IBSS
+    Unit tests:
+    System Directed Tests Done:
+    Missing system Directed Tests:
+    Analysis of affected flows:
+    System Test plan done:
+    Missing System Test plan:
+    
+    ------------------------------------------------------------------------
+    r37761 | ischer | 2011-03-16 05:39:40 -0700 (Wed, 16 Mar 2011) | 12 lines
+    
+    Title: new AGC table fro JP/MP
+    Detailed description: new AGC table fro JP/MP
+    Bug id (if exists):
+    Code\Test plan review by:
+    Regressions (choose): SV/AV/BSS/PIBSS/IBSS
+    Unit tests:
+    System Directed Tests Done:
+    Missing system Directed Tests:
+    Analysis of affected flows:
+    System Test plan done:
+    Missing System Test plan:
+    
+    ------------------------------------------------------------------------
+    r37725 | galla | 2011-03-15 12:49:20 -0700 (Tue, 15 Mar 2011) | 12 lines
+    
+    Title: Failed null Tx fix
+    Detailed description: changed scan substate to SCAN_SUBSTATE_TX_FAIL if null Tx failed
+    Bug id (if exists):
+    Code\Test plan review by: Oleg
+    Regressions (choose): GK, scan ITP
+    Unit tests:
+    System Directed Tests Done:
+    Missing system Directed Tests:
+    Analysis of affected flows:
+    System Test plan done:
+    Missing System Test plan:
+    
+    ------------------------------------------------------------------------
+    r37667 | ischer | 2011-03-15 01:00:01 -0700 (Tue, 15 Mar 2011) | 12 lines
+    
+    Title: new sv drop for marble Bx
+    Detailed description: added new radio sv drop for marble Bx
+    Bug id (if exists):
+    Code\Test plan review by:eperi
+    Regressions (choose): SV/AV/BSS/PIBSS/IBSS
+    Unit tests:
+    System Directed Tests Done:
+    Missing system Directed Tests:
+    Analysis of affected flows:
+    System Test plan done:
+    Missing System Test plan:
+    
+    ------------------------------------------------------------------------
+    r37586 | omirensk | 2011-03-13 05:10:37 -0700 (Sun, 13 Mar 2011) | 12 lines
+    
+    Title: alive 11.D1, https://subversion.iil.intel.com/mg/mwg/rtf/MWG_UCODE/DEV/tags/TUG_ww12_d1_ver_11_D1
+    Detailed description:
+    Bug id (if exists):
+    Code\Test plan review by:
+    Regressions (choose): SV/AV/BSS/PIBSS/IBSS
+    Unit tests:
+    System Directed Tests Done:
+    Missing system Directed Tests:
+    Analysis of affected flows:
+    System Test plan done:
+    Missing System Test plan:
+    
+    ------------------------------------------------------------------------
+    r37577 | amasri | 2011-03-13 01:03:18 -0800 (Sun, 13 Mar 2011) | 12 lines
+    
+    Title: update the phy context when channel switch
+    Detailed description:
+    Bug id (if exists):
+    Code\Test plan review by:AMir Parhi
+    Regressions (choose): SV/AV/BSS/PIBSS/IBSS
+    Unit tests:
+    System Directed Tests Done: Regression
+    Missing system Directed Tests:
+    Analysis of affected flows:
+    System Test plan done:
+    Missing System Test plan:
+    
+    ------------------------------------------------------------------------
+    r37559 | jesternb | 2011-03-10 14:52:05 -0800 (Thu, 10 Mar 2011) | 1 line
+    
+    Title: correct mkfw.py script for Linux ucode causing scm build failure
+    ------------------------------------------------------------------------
+    r37553 | zchen29 | 2011-03-10 11:07:10 -0800 (Thu, 10 Mar 2011) | 4 lines
+    
+    Merged from b_15x_P2P:
+    1) Stage 1 of beacon sequence number fix. With this fix, beacons will have sequence numbers, however, the sequence numbers are taken out of WLAN sequence number space.
+    2) Fixed issue introduced by CI 35454 on 15.0_trunk: updating channel number in PAN context was moved to before the "if" statement in which it was referenced, not intended behavior.
+    3) Cancel P2P public action frame TX scan after frame transmission is successful.
+    ------------------------------------------------------------------------
+    r37469 | jesternb | 2011-03-09 14:02:13 -0800 (Wed, 09 Mar 2011) | 1 line
+    
+    Title: update Linux release notes
+    ------------------------------------------------------------------------
+    r37463 | jesternb | 2011-03-09 09:48:41 -0800 (Wed, 09 Mar 2011) | 1 line
+    
+    Title: Linux ucode build script update, add 'bits' to mkfw.py, example 18=bits:0,1,2,3,4
+    ------------------------------------------------------------------------
+
++=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+
+Windows changes since 11.7A which was last Linux released ucode
+full list in source tar in "uCode/Releate Notes.txt"
+
++=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+
+    omiresnk 20/03/2011 alive ver 11.D3
+    ----------------------------------------------------------------------------
+    SVN: https://subversion.iil.intel.com/mg/mwg/rtf/MWG_UCODE/DEV/tags/TUG_ww13_d1_ver_11_D3
+    - new sv drop for marble Bx
+    - Failed null Tx fix
+    - new AGC table fro JP/MP
+    - Reverted CI 37553 since it broke WFD GONG test (SYSASSERT 1BD6)
+    
+    
+    omiresnk 13/03/2011 alive ver 11.D1
+    ----------------------------------------------------------------------------
+    SVN: https://subversion.iil.intel.com/mg/mwg/rtf/MWG_UCODE/DEV/tags/TUG_ww12_d1_ver_11_D1
+    - remove sensitivity from phy init sequence
+    - bug fix 342 (data 4,1)
+    - JP/MP sv drop B0 + fune function code reduction
+    - merge milestones/Linux/trunk into 15.0_trunk (no affect on windows code)
+    - allow for compilation of windows ucode for RP with uSNIFFER by same #ifdef as allowing complication for RP for Linux
+    - Merged from b_15x_P2P:
+    	1) Stage 1 of beacon sequence number fix. With this fix, beacons will have sequence numbers, however, the sequence numbers are taken out of WLAN sequence number space.
+    	2) Fixed issue introduced by CI 35454 on 15.0_trunk: updating channel number in PAN context was moved to before the "if" statement in which it was referenced, not intended behavior.
+    	3) Cancel P2P public action frame TX scan after frame transmission is successful.
+    - update the phy context when channel switch
+    
+    
+    omiresnk 27/02/2011 alive ver 11.D0
+    ----------------------------------------------------------------------------
+    SVN: https://subversion.iil.intel.com/mg/mwg/rtf/MWG_UCODE/DEV/tags/TUG_ww10_d2_ver_11_D0
+    - TX AGG frame dump bug fix 
+    - wowlan missed beacon bug fix
+    - deliver PHY content from B0 MVT drop branch out
+    - Replaced macro GET_MAC_BY_STA_ID with GET_MAC_TYPE_BY_STA_ID.
+    
+    
+    omiresnk 20/02/2011 alive ver 11.CD
+    ----------------------------------------------------------------------------
+    SVN: https://subversion.iil.intel.com/mg/mwg/rtf/MWG_UCODE/DEV/tags/TUG_ww09_d2_ver_11_CD
+    - fix for HW RFKill Alive flow resulting in WD NMI
+    - updated to Linux build scripts and update to regulatory functions. No impact to Windows ucode.
+    - BT Coex Cleanup Phase 1 ,bug fixing, JP1 PTA enhancements and supporting 2nd BT UART message.
+    - Change Jackson TRM_PRJ_SETTINGS_NAME to jackson instead of rainbow.
+    
+    
+    omiresnk 13/02/2011 alive ver 11.CC
+    ----------------------------------------------------------------------------
+    SVN: https://subversion.iil.intel.com/mg/mwg/rtf/MWG_UCODE/DEV/tags/TUG_ww08_d2_ver_11_CC
+    - WoWLAN TP/RP bring up delivery (WoWLAN image changes only)
+    - Add REDUCED_TXPOWER_CMD  (0x9f)
+    - phy context fix. restoring tx power after switch
+    - pm code cleanup; add debug info for power management history buffer (NEEDED FOR ASSERT 342 & EDC)
+    - xVT RX PER fix
+    - fixed typo in g_linkSubtype variable name; replace if-0 with SCD_DEBUG define in monitor dump function
+    
+    omiresnk 03/02/2011 alive ver 11.CA
+    ----------------------------------------------------------------------------
+    SVN: https://subversion.iil.intel.com/mg/mwg/rtf/MWG_UCODE/DEV/tags/TUG_ww06_d2_ver_11_CA
+    - Support of P2P in phy
+    - fix for 2087 assert (HSD 3033833)
+    - debug enhancement (by Oded, DEV trunk CI revision - 34967
+    - WA for SCD partial read feature, which has bug in Jackson, Marble and Wilkins1 HW. (HSD 3033779)
+    - Wrong SENT_CTS indication clearance fix for scenario of TX with RX detect
+    - PM expected bit fix (3033475 and 3033466)
+    - revert assert UCODE_SYSASSERT_22C9 workarround (3033891)
+    
+    
+    ybarash 07/12/2010 alive ver 11.C2
+    ----------------------------------------------------------------------------
+    SVN: https://subversion.iil.intel.com/mg/mwg/rtf/MWG_UCODE/DEV/tags/TUG_ww50_d2_ver_11_C2
+    - fix for assert 2087 - ignore invalid PAN tx power command
+    - BT interfering with Init DC Calibration fix: 3033358, 3545088 (SYSASSERTs 0x13B1, 0x13AD)
+    - addition of set SW temperature (for debug only)
+    - Alive response structure changes
+    - update Linux make and add tx power calibration changes made in Windows driver for handling sub group inticator added to eeprom calib info
+    - UCODE_SYSASSERT_208E and UCODE_SYSASSERT_1038 fix merged from Rainbow/milestones/14.0_HF.
+    - phyAddContext fix
+    - Fix bug ID 3033192 (Changing BT connectable state (not-connectable -> connectable –> not-connectable) cause WIFI Rx TPT decrease after ~30 seconds).
+    - removed Maximum Likelyhood, EepromManagement, Ibss ATIM Window code. (saved 1.7Kbytes)
+    - Sending Keep alive with Ignore BT flag.
+    - Adding support of smart FIFO and LDBG gen 2 in Wilkins.
+    - Fix BUG SYSASSERT_326: 
+      after receiving Halt Command the card wakeup from MAC Access and start radio init, the fix is to behave same as RF-Kill flow.
+    - API for context is valid fix
+    - Adding Wilkins and removed Jackson3
+    - MCAST refactory delivered (fixing MCAST receive in PM)
+      Detailed description:adding a new slot for receiving mcast frames, splitting the beacon sync slot function.
+    - Background tasks for multi MAC environment
+    - Bug fix: 
+           1. Race between TRM kill flow and initial DC calib 
+           2. Exit from RF-kill bug fix
+           3. Moved power up event to bt-coex in power up flow
+    - 1x1 NICs Tx Antenna selection fix in Ack.
+    - Remove the DUP flag while transmitting CCK control frame on FAT channel except RTS frame.
+    - Calibrtion - Clear the complete notification request bit after sending
+    - Add Timers support for feature NSC (MultiMac) feature.
+    - RDIG 40MHz clock gating .
+    - Add writing log event in command Id parser.
+    - Fix Tonal shaping compilation for KP , Configure tonal shaping enable/disable on every tx frame
+    - remove restrictions on channels for SV Tools image for regulatory testing
+    - Change calib infrastructure API to support multi context
+    - align Linux TxIq calibration with windows driver
+    - Fixes in rxon handler for updating the PAN and BSS pointers (3032216)
+    - deliver from sensitivity branch - 32143-32349
+    - adding support for multi context in phy layer - ready for new uCode architecture. changes in TxPower to be control by phy context
+    - Legacy Over Advanced + Set Taylor to work legacy over advanced.
+    - Puma on DEV BU delivery (pertial)
+    RainbowP ADC performance follow-up
+    Detailed description: The only difference between 2 drops is as following:
+                SV drop 0.3 - Reg 0x71 value 0x29;
+                SV drop 0.4 - Reg 0x71 value 0x11
+    - WiWi Coex. Fix for radio request buffer overflow
+    - ack/ba bt protection moved to after direct transfer start
+    
+    
+    vshulman 12/10/2010 alive ver 11.A6
+    ----------------------------------------------------------------------------
+    SVN: https://subversion.iil.intel.com/mg/mwg/rtf/MWG_UCODE/DEV/tags/HO_RP_ww42_d3_ver_11_A6
+    - added JSC, Marble reduced images compilation (xBuilder, GK)
+    - turn off Analog DAC in phyAnaFeRxOff()
+    - added Marble Peak and Jackson Peak SC compilations (GK, xBuilder)
+    - bug fix, added save and restore command id during sram tx abort flow
+    - deliver vmirkis/b_devCalibEnv 31784
+      1. Init calib envelope changed
+      2. API misc update
+      3. TRM status clearance race fix
+      4. Bugs - 3544401, 3543690
+    - Added SYSASSERT in rxon command if rxon response id is wrong
+    - Fixed typo in pm_handle_rx_frame() and DTIM_handle() related to advanced PM in P2P_DEVICE mode
+    - Internal scan abort fix
+      There was a endless loop in InternalScanAbort().
+      Scan enters expecting for callback mode, but null packet does not have a chance to be Tx-ed, because scan is in the endless wait.
+      All this ends up with a WD NMI.
+      To avoid it uCode will give up the null wake up
+      Bug id (if exists): 3544554
+    - fix a.lst: Using elf_list2 to build a.lst. It uses “elf_dump” instead of “addr2line”.
+      Adding compilation flags =Each_function_in_own_section and Each_var_in_own_section caused a problem with a.lst.
+    - correct experimental build of ucode for Linux
+    - reduced image compilation fixed
+      removed redundant abortTxFromSram() declaration
+    - deliver b_oyusimov_tx_abort 31667
+      1. changed abortTxFromSram: called callback function after dump of internal tx
+      2. cpsu and ibss modules changed according to new abortTxFromSram behavior
+      3. added ibss function ibssClearPendingSlot to restore tx interrupts, if ibss state machine moved to idle state and cleared from slot
+      4. ibssBeaconCallback activation only if TX_FRAME_STATUS_OK
+    - BTConfig command handler bug fix for XVT mode
+      When configured to XVT mode was not setting the correct PTA lut according to the command
+    - BT coex related fixes
+      1. New APi to support debug and XVT modes: a. Coex mode ANT_TO_WIFI which forces shared antenna to be always at wifi side
+                                                 b. Coex mode ANT_TO_BT which forces shared antenna to be always at bt side
+      2. New API for loose coex: bit #7 in BTConfig.flags disables sync2bt mechanism
+    - Linux only - correct typo in prior CI to correct bug in Taylor TXIQ calibrations for RP1
+    - When BT coex in STUB - force antenna to WiFi
+    - separate AGC table for RP1/2
+    - Linux only - correct bug in Taylor TXIQ calibrations for RP1
+    
+    
+    vmirkis 5/10/2010 alive ver 11.A4
+    ----------------------------------------------------------------------------
+    SVN: https://subversion.iil.intel.com/mg/mwg/rtf/MWG_UCODE/DEV/tags/HO_RP_ww41_d3_ver_11_A4
+    - fixed bug no. 3032461: Instead of looking at the active rxon state in "check_rx_pending" when powering down look only at the bss state to avoid sending an unnecessary null.
+    - fixed bug no. 3032951: Fixed timeout expiration check over "waitWithTimeoutForRxfAvailable" function.
+    
+    
+    vmirkis 27/09/2010 alive ver 11.A3
+    ----------------------------------------------------------------------------
+    SVN: https://subversion.iil.intel.com/mg/mwg/rtf/MWG_UCODE/DEV/tags/HO_RP_ww40_d2_ver_11_A3
+    - radioFE command with opcode "direct control" fix. Direct control opcode used by xvt to set rx/tx chains. It used RADIO_CTL macro, which in rainbow also controls shared antenna switch. Therefore, the command was changed to control the chains without affecting shared antenna switch
+    - Read OTP guarded by BT Coex Idle envelope, Tune guarded by BT Coex Idle envelope, Radio access guarded by disabling DSP Radio access,	API update
+    - Fixed push notification when full RX-FIFO. A new behavior was added for cases where the uCode gets a full RX-FIFO while trying to push notification over it. The new behavior is as follows:
+       a) The uCode will pull the RX-FIFO for available space till availability or dedicated timeout expiration (currently 1 second)
+       b) In the event of available space the uCode push notification over RX-FIFO
+       c) In the event of timeout expiration the uCode will cause an assert.
+    - Bug 3544172 fix - don't parse invalid beacon
+    - 1. improve RX --> TX timing
+        a. move usniffer event after start of direct transfer
+        b. substitute calling rx filter func with if, for DATA frames
+        c. move BT coex from critical path
+        d. don't call btRxStart if identify frame for us, after frame end on the air (short frames opt.)
+      2. trm_config.c, unify RX-->TX transition
+      3. abortTxFromSram fixed, called callback
+      4. disable/enable monitor while waiting for beacon bytes to become valid in RXF
+    - RP AGC table
+    - Coex mechanism to bypass TRM RXE check and TX2RX flow
+    
+    
+    vmirkis 15/09/2010 alive ver 11.A2
+    ----------------------------------------------------------------------------
+    - REVERTED rev: 30959
+    
+    bgandelm 14/09/2010 alive ver 11.A1
+    ----------------------------------------------------------------------------
+    SVN: https://subversion.iil.intel.com/mg/mwg/rtf/MWG_UCODE/DEV/tags/HO_RP_ww38_d3_ver_11_A1
+    1. Fix bug in TGH measurement command for CCX test.
+      - Before implementation of CPSU, the exit form measurement flow was by sending Null frame with PS-0 or if there any TX frames in TX FIFO the frame was sent with PS=0 and moving the AP status to AWAKE. using the new CPSU there is no way to send TX unsynchronized in PS bit therefore need to send the NULL with PS=0 before sending TX frames.
+    2. compilation fixes for Linux/Calibration image (+GK)
+      - library names changes (cont. Tx)
+    3. WiFi Rx&Tx prio boost patterns in BTConfig command
+      - Last 3 reserved bytes of BTConfig are now used as following
+                                     1. Wifi Tx prio boost 8 bit rotating pattern (like kill ack mask)
+                                     2. Wifi Rx prio boost 16 bit rotating pattern (like kill ack mask)
+    4. Cosmetics - added definition for "non shared antenna" in all projects vals headers
+    5. SYSASSERT 333 (PM-->AS) fix.
+    6. correct loss of statistics without LARC_MONITOR enabled.  change made in CI 24633.  missing stats directly effect performance of Linux implementation. no effect for windows implementation.
+    7. correct perl script (larc_si_monitor.pl) for use on linux where elseif without an if statement fails
+    8. update linux calibration functions to current windows driver code and update scripts to new tree structure.  Linux only changes, do impact to windows ucode
+    9. correct GK failures due to missing name changes for includes of continues_tx.h, now continuousTx.h
+    10. correct GK failures due to missing name changes for includes of continues_tx.h, now continuousTx.h
+    11. correct GK entry for Linux Calib and Protocol with Nomonitor.
+    12. correct GK entry for Linux Calib and Protocol with Nomonitor, try 2
+    13. Fixed push notification when full RX-FIFO and TFD Q hang as a result of calling abortTxFromSram
+    14. 1. A new behavior was added for cases where the uCode gets a full RX-FIFO while trying to push notification over it.
+       The new behavior is as follows:
+        a) The uCode will pull the RX-FIFO for available space till availability or dedicated timeout expiration (currently 1 second)
+        b) In the event of available space the uCode push notification over RX-FIFO
+        c) In the event of timeout expiration the uCode will cause an assert.
+       2. fix abortTxFromSram, drop frame using same flow of regular drop TX
+    
+    
+    vshulman 03/08/2010 alive ver 11.94
+    1. Fix kick to active debug flag reset on AS init params.
+    2. prevent wakeup incase pspoll failed if kick to active disable.
+    3. add to as_KickImmidiateWakeup SYSASSERT in case kick to active disable.
+    4. Remove XTAL wakeup clear.
+    5. update ps bit in mh control for aggregation flow
+    6. Radio REG read fix - wrapped with DISABLE DSP
+    7. dwell time managed by timer
+    8. BT coex fixes
+        - TRM BT active clear from TRM
+        - Handle TX that not requires ACK
+        - Cleaning TX inputs after their configuration
+        - CF-End: BT Coex priority changed from high to low
+        - 3W fix: After detection tx was marked with high priority - was taking priority from detection
+        - BT SCO fixes
+        - TRM bug fix: DRS command overwrites the upper 16 bits of DREG
+        - Notify BT Coex regarding tune start with band (Scan 5.2)
+        - BT Alive indication fix
+        - Fixed antenna taking for long periods (almost 1s), after DC Calib, during scan etc’
+        - BT alive indication is taken directly from radio reg
+        - When going to power off/rx off/power save after frame-not-for-us if BT is OFF wasn’t returning the antenna
+    9. add BT Coex to Linux calibration ucode via config file Regulatory-defs.mak
+    10. deliver Puma trunk rev 27830
+    11. Comments sys assert in API log
+    12. RP2 - support of radio B1 (SV drop 05).
+    13. Send Ps-poll & Null frame in fixed rate 6M or 2M (if 6M no supported)
+    14. added JacksonSC HwTest image to GateKeeper
+    
+    oliron 20/07/10
+    main checkin
+    1. 11W bug fix, for management multicast frames
+    2. TRM BT KILL bug fix in rxtx_fsm
+    3. SENT_CTS fix, stay in rxtx_fsm after sending CTS (expecting DATA frame to arrive)
+    4. Tx_funcs -
+      a. dumpTxMsdu - fix flush loop condition
+      b. TX response - remove LMPM_FLUSH_RB to get data co alias
+      c. Allow TX aggregation bursting, currently only in Rainbow/Taylor. (puma needs extra validation)
+      d. Bug fix BT kill inside wait for TX AGG next frame to become valid.
+         Use SCD queue from 1st frame and not from the current frame
+    
+    Jackson project support
+    1. Removed JacksonAC and added Jackson3
+    2. Support compressed periphery format for Jackson, in monitor and sniffer scripts
+    3. New monitor for Jackson, via LDBG, allows compressed periphery and address filtering.
+       Still support all monitor via nevo_monitor using #ifdef USE_LEGACY_MON
+    4. added smart-fifo configuration, for Jackson HW.
+    5. Added (under ifdef) TRM test code to check new commands memory access. (valid for Jackson)
+    6. Updated fh_const.h for Jackson, smart-fifo config regs.
+    7. trm_const.h - added new registers for fast SRAM access
+    
+    other stuff
+    1. Added "always" conversion from .trm to .c in make, (w/o regard to file time-stamp),
+       needed in multi project compilations
+    2. aux_funcs.c - removed double writes to LMPM_FLUSH_RB, and changed data from 0 to ASSERT_PULSE
+    3. Added SCD queue mask (19:0), when mapping from TXF to SCD queue. (zchen bug)
+    4. Info element parse, added "begin" of handling of MMIE, still need to add full replay check.
+    5. Removed TRM TX_CMD_DMA for single TX and AGG, logic moved back to ARC.
+    
+    
+    !!! Please reserved 11.7C-11.84  for Holbert alpha2 !!!!!
+    agil: 18/05/2010 alive ver 11.7C
+    SVN: rtf/MWG_UCODE/DEV/tags/RP_Eng_ww21_d3_ver_01_v11_7C
+    ----------------------------------------------------------------------------
+    - set correct channel number in measurement
+    - Detailed description:
+    1. fixed TRM_TX_MISC and TRM_SW_STTS0 masks
+    2. added CCA_EXT_TMR_Z bit to TRM_HW_STTS0
+    3. fixed late_rx2tx_cnt statistics
+    - RP - modify AGC table
+    - deliver b_agil_bgandelm_rainbowCoexIntegration 24827
+    - Enabled faking of BTConfig command in init sequence (btCoexManagerInit) for HW_UCODE compilation:\
+    Removed condition: "&& defined(DEF_BT_COEX_11N_AV_TEST)
+    - Periph stall due to race on MRB access w/a
+    - AV uCode fix - valid antennas were not initialized during init sequence
+    - Bug fix in prevent from going to sleep in high traffic and with BT SCO activated.
+    - 11A Assoc failure fix
+    
+    agil: 12/05/2010 alive ver 11.7A

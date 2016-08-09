@@ -1,0 +1,9 @@
+adb shell su - mount -o remount, 'rw' /system
+adb shell su - mount -o remount, 'rw' /
+adb push ~/xmm_ko/iwlwifi.ko /system/lib/modules/3.0.31/updates/drivers/net/wireless/iwlwifi/iwlwifi.ko
+adb push ~/xmm_ko/iwlmvm.ko /system/lib/modules/3.0.31/updates/drivers/net/wireless/iwlwifi/mvm/iwlmvm.ko
+adb push ~/xmm_ko/mac80211.ko /system/lib/modules/3.0.31/updates/net/mac80211/mac80211.ko
+adb push ~/xmm_ko/cfg80211.ko /system/lib/modules/3.0.31/updates/net/wireless/cfg80211.ko
+#adb push ~/xmm_ko/compat.ko /system/lib/modules/3.0.31/updates/compat/compat.ko
+#adb push ~/xmm_ko/iwlxvt.ko /system/lib/modules/3.0.31/updates/drivers/net/wireless/iwlwifi/xvt/iwlxvt.ko
+

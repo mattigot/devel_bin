@@ -1,0 +1,5 @@
+echo "insmod /lib/modules/3.8.0-android-x86+/updates/drivers/net/wireless/iwlwifi/iwlwifi.ko"
+insmod 	/lib/modules/3.8.0-android-x86+/updates/drivers/net/wireless/iwlwifi/iwlwifi.ko
+echo "insmod /lib/modules/3.8.0-android-x86+/updates/drivers/net/wireless/iwlwifi/mvm/iwlmvm.ko"
+insmod 	/lib/modules/3.8.0-android-x86+/updates/drivers/net/wireless/iwlwifi/mvm/iwlmvm.ko
+
