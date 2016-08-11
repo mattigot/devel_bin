@@ -1,0 +1,11 @@
+host git-amr-3
+ user		mgottlie
+ hostname	git-amr-3.devtools.intel.com
+ port 		29418
+ identityfile	~/.ssh/matti.gottlieb@intel.com
+
+host git-ger-8
+ user		mgottlie
+ hostname	git-ger-8.devtools.intel.com
+ port 		29418
+ identityfile	~/.ssh/matti.gottlieb@intel.com
