@@ -177,6 +177,9 @@ NC='\[\033[0m\]'
 #PS1="$yellow[$red\H$yellow][$GREEN\w$grey$yellow]$NC# "
 PS1="$yellow[$red\w$grey$yellow]$NC# "
 
+#zephry
+export ZEPHYR_GCC_VARIANT=zephyr
+export ZEPHYR_SDK_INSTALL_DIR=/home/tester/devel/zephyr/zephyr-sdk
 
 #enviorment variables
 #old PATH for backup: /home/tester/bin:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/vol/store/boot/sbin
