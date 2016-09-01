@@ -1,0 +1,511 @@
+"
+" VIM RC
+"
+
+:let mapleader = ","
+
+" settings for solarized colorscheme
+" =====================================================================
+" syntax enable
+" set background=light
+" colorscheme solarized
+" =====================================================================
+
+
+" Setting addon manager and updating it automatically
+	set rtp+=~/.vim/vim-addons/vim-addon-manager/
+	call vam#ActivateAddons(['vim-addon-manager',
+		\ 'vim-addon-manager-known-repositories',
+		\ 'The_NERD_tree',
+		\ 'Source_Explorer_srcexpl.vim',
+		\ 'taglist',
+		\ 'SuperTab_continued.'], {'auto_install' : 0} )
+
+call pathogen#infect() 
+
+" Basic global settings
+	set showmatch	" Show matching brackets
+	set matchtime=1 " time to show the matching bracket
+	set incsearch	" Incremental search, faster
+"	set mouse=a	" Enables mouse on all terminals
+"	set autoindent	" Auto identation
+	set cindent
+	set cino=(0	"indent correctly to parentheses hidden	" Enable hiding buffers with unsaved changes
+"	set background=dark " Makes xterm colors better
+	syntax on	" Syntax highlighting
+	set smartindent " Turn on smart indent
+	set tabstop=8 " set tab character to 8 characters
+	set shiftwidth=8 " indent width for autoindent
+	set hlsearch
+	"set ruler
+	filetype indent on " indent depends on filetype
+	filetype plugin on
+	set foldnestmax=2
+
+	" jumping from a modified buffer: two options, either jump or save
+	" before leaving the current buffer.
+	set hidden
+	"set autowriteall
+
+" remove highlighting of a searched pattern
+	nnoremap <Leader>/ :noh<CR>
+	"nnoremap <Leader>/ :set hls!<CR>
+" ============================================================================
+" OmniCpp
+" ============================================================================
+	set nocp
+	filetype plugin on
+
+" Update tags file
+	nnoremap <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+	"nnoremap <F12> :!~/bin/build_vim_project.sh<CR>
+	nmap <F6> :tn <CR>
+	nmap <C-F6> :tp <CR>
+
+" Misc settings
+	let OmniCpp_DisplayMode = 1
+	let OmniCpp_ShowScopeInAbbr = 0
+	let OmniCpp_ShowAccess = 0
+
+" Auto start completion, put 0 to disable
+	let OmniCpp_MayCompleteDot = 1
+	let OmniCpp_MayCompleteArrow = 1
+
+" Disable automatic preview window
+" 	set completeopt=menuone,menu,longest
+ 	set previewheight=2
+
+" Auto close of preview window if enabled
+	autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+	autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
+	let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+
+" Change the default (pink) completion pop up color
+	if version >= 700
+	   highlight   clear
+	   highlight   Pmenu         ctermfg=0 ctermbg=4
+	   highlight   PmenuSel      ctermfg=0 ctermbg=3*
+	   highlight   PmenuSbar     ctermfg=7 ctermbg=0
+	   highlight   PmenuThumb    ctermfg=0 ctermbg=7
+	endif
+
+" Mapping Ctrl+hjkl and Ctrl+arrows for navigating windows
+	noremap <C-J> <C-W>j
+	noremap <C-K> <C-W>k
+	noremap <C-H> <C-W>h
+	map <C-l> <C-W>l
+	noremap <C-Down>  <C-W>j
+	noremap <C-Up>    <C-W>k
+	noremap <C-Left>  <C-W>h
+	noremap <C-Right> <C-W>l
+	nmap <C-q> 	:qall
+" Buffers shortcuts
+	map <F1>		:ls<CR>
+	map <Leader><Leader>	:b#<CR>
+	map <Leader>1		:b1<CR>
+	map <Leader>2		:b2<CR>
+	map <Leader>3		:b3<CR>
+	map <Leader>4		:b4<CR>
+	map <Leader>5		:b5<CR>
+	map <Leader>6		:b6<CR>
+	map <Leader>7		:b7<CR>
+	map <Leader>8		:b8<CR>
+	map <Leader>9		:b9<CR>
+
+" bufstat definitions
+	"set laststatus=2
+	"highlight ActiveBuffer ctermfg=white ctermbg=blue
+	"let g:bufstat_active_hl_group = 'ActiveBuffer'
+	"let g:bufstat_prevent_mappings = 1 "prevent remapping left/right
+	set statusline=%f%=\[col\ %v\ line\ %l/%L%3p%%]
+	"disable statusline in taglist window - problem is that it requires teh
+	"window to be open
+	"exe bufwinnr('__Tag_List__') . 'wincmd w' | setlocal statusline=%v | wincmd p
+
+" Source Explorer definitions
+"	nmap <F8>   :SrcExplToggle<CR>
+"	let g:SrcExpl_isUpdateTags = 0	" Prevent auto-update
+"	let g:SrcExpl_updateTagsKey = "<F12>"
+
+" Taglist definitions
+	let Tlist_Show_One_File = 1
+  let Tlist_WinWidth = 50
+	nmap <F9>	:TlistToggle<CR>
+
+" NERDTree definitions
+	nmap <C-p>	:NERDTreeToggle<CR>
+
+" SuperTab definitions
+	let g:SuperTabDefaultCompletionType = "context"
+	let g:SuperTabMappingForward = "<C-X><C-O>"
+" Display numbers
+	set number
+
+" Display the open buffer list
+	nnoremap <F5> :buffers<CR>:buffer<Space>
+
+" Limit the textwidth to 80 and wrap
+	set textwidth=80
+
+" Highlight spaces
+	highlight ExtraWhitespace ctermbg=red guibg=red
+	match ExtraWhitespace /\s\+$/
+	autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+	autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+	autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+	autocmd BufWinLeave * call clearmatches()
+
+" On writing buffer - delete trailing whitespaces and replace
+" multiple empty lines with one empty line. Confirm replacements.
+"	autocmd BufWritePre *.[c|h] :%s/^\n\{2,}/\r/e | %s/\s\+$//e
+
+" list spaces (:set list/nolist)
+	set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+
+" Informative status line
+	"set laststatus=2
+	"set statusline=%F%m%r%h%w\ [TYPE=%Y\ %{&ff}]\ [%l/%L\ (%p%%)]
+	"set statusline=%f%m\ [buf\ %n\]\ [%c\ %l\/%L]
+
+" Set line numbering to take up 5 spaces
+	set numberwidth=5
+
+" Highlight current line
+	" set cursorline
+
+" Turn on spell checking with English dictionary
+	" set spell
+	" set spelllang=en
+	" set spellsuggest=5 " show only 5 suggestions for misspelled words
+
+" Toggle fold recuresively by pressing space in Normal mode
+"nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
+nnoremap <silent> <Space> zA
+
+" CCTree
+" =======================================================================
+" CCTreeWindowToggle
+" CCTreeTraceForward, CCTreeTraceReverse
+" CCTreeRecurseDepthPlus, CCTreeRecurseDepthMinus
+" 
+"
+" Load recently saved symbol database upon vim start
+autocmd VimEnter * CCTreeLoadXRefDB cctree.out
+
+let g:CCTreeWindowVertical = 1
+let g:CCTreeRecursiveDepth = 3
+let g:CCTreeMinVisibleDepth = 3
+let g:CCTreeKeyTraceForwardTree = '<C-\>>' 
+let g:CCTreeKeyTraceReverseTree = '<C-\><' 
+let g:CCTreeKeyHilightTree = '<C-l>'        " Static highlighting
+let g:CCTreeKeySaveWindow = '<C-\>y' 
+let g:CCTreeKeyToggleWindow = '<C-\>w' 
+let g:CCTreeKeyCompressTree = 'zs'     " Compress call-tree 
+let g:CCTreeKeyDepthPlus = '<C-\>.' 
+let g:CCTreeKeyDepthMinus = '<C-\>,'
+
+" Cscope Support
+"
+
+" use both cscope and ctag for 'ctrl-]', ':ta', and 'vim -t'
+    set cscopetag
+
+" add any cscope database in current directory
+	if filereadable("cscope.out")
+        	cs add cscope.out
+	endif
+
+" Informative status line
+set laststatus=2
+
+hi statusline ctermbg=grey
+
+" now set it up to change the status line based on mode
+if version >= 700
+	au InsertEnter * hi StatusLine term=reverse ctermbg=blue gui=undercurl guisp=Magenta
+        au InsertLeave * hi StatusLine term=reverse ctermbg=grey gui=bold,reverse
+endif
+
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+""""""""""""" cscope/vim key mappings """""""""""""
+    "
+    " The following maps all invoke one of the following cscope search types:
+    "
+    "   's'   symbol: find all references to the token under cursor
+    "   'g'   global: find global definition(s) of the token under cursor
+    "   'c'   calls:  find all calls to the function name under cursor
+    "   't'   text:   find all instances of the text under cursor
+    "   'e'   egrep:  egrep search for the word under cursor
+    "   'f'   file:   open the filename under cursor
+    "   'i'   includes: find files that include the filename under cursor
+    "   'd'   called: find functions that function under cursor calls
+
+
+" To do the first type of search, hit 'CTRL-\', followed by one of the
+   " cscope search types above (s,g,c,t,e,f,i,d).  The result of your cscope
+   " search will be displayed in the current window.  You can use CTRL-T to
+   " go back to where you were before the search.
+   "
+    nnoremap <F7> :cs find s 
+    "nnoremap <F7> :cs find s <C-R>=expand("<cword>")<CR><CR>
+    nmap <F7>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+    nmap <F7>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+    nmap <F7>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+    nmap <F7>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+    nmap <F7>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+    nmap <F7><F7> :cs find f 
+    nmap <F7>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+    nmap <F7>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+    "nmap <C-F7> :cs find t 
+
+    " Using 'CTRL-spacebar' (intepreted as CTRL-@ by vim) then a search type
+    " makes the vim window split horizontally, with search result displayed in
+    " the new window.
+    "
+    " (Note: earlier versions of vim may not have the :scs command, but it
+    " can be simulated roughly via:
+    "    nmap <C-@>s <C-W><C-S> :cs find s <C-R>=expand("<cword>")<CR><CR>
+
+    nmap <C-@>s :scs find s <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-@>g :scs find g <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-@>c :scs find c <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-@>t :scs find t <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-@>e :scs find e <C-R>=expand("<cword>")<CR><CR>
+    nmap <C-@>f :scs find f <C-R>=expand("<cfile>")<CR><CR>
+    nmap <C-@>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+    nmap <C-@>d :scs find d <C-R>=expand("<cword>")<CR><CR>
+
+    " map S-F8 according to Mark.vim mappings, note that cannot use noremap here
+    nmap <S-F8> <leader>m
+
+" don't create backup swap files
+set nobackup
+set nowritebackup
+set noswapfile
+
+colorscheme lucius
+LuciusBlack
+
+" macros
+let @p='i	printk(KERN_ERR "%s: ", __func__);ODODODODODODODODODODODOD'
+nnoremap <leader>d @p
+
+if has('quickfix')
+	set cscopequickfix=s-,c-,d-,i-,t-,e-
+endif
+
+" Clear QF window
+nnoremap <silent> <Leader>e :call setqflist([])<CR>
+
+" Restrict height of a quickfix window
+au FileType qf call AdjustWindowHeight(10, 12)
+function! AdjustWindowHeight(minheight, maxheight)
+	  exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
+endfunction
+
+" Filter the quickfix list
+function! FilterQFList(type, action, pattern)
+    " get current quickfix list
+    let s:curList = getqflist()
+    let s:newList = []
+    for item in s:curList
+        if a:type == 0     " filter on file names
+            let s:cmpPat = bufname(item.bufnr)
+        elseif a:type == 1 " filter by line content
+            let s:cmpPat = item.text . item.pattern
+        endif
+        if item.valid
+            if a:action < 0
+                " Keep only nonmatching lines
+                if s:cmpPat !~ a:pattern
+                    let s:newList += [item]
+                endif
+            else
+                " Keep only matching lines
+                if s:cmpPat =~ a:pattern
+                    let s:newList += [item]
+                endif
+            endif
+        endif
+    endfor
+    call setqflist(s:newList)
+endfunction
+
+nnoremap <Leader>F :call FilterQFList(0, -1, inputdialog('Remove file names matching:', ''))<CR>
+nnoremap <Leader>f :call FilterQFList(0, 1, inputdialog('Keep only file names matching:', ''))<CR>
+nnoremap <Leader>L :call FilterQFList(1, -1, inputdialog('Remove all lines matching:', ''))<CR>
+nnoremap <Leader>l :call FilterQFList(1, 1, inputdialog('Keep only lines matching:', ''))<CR>
+
+function! FoldQFFiles() 
+    normal! zE 
+    let lnum = 1 
+    let currFname = '' 
+    let foldStart = 1 
+    let foldEnd = 0 
+    while lnum <= line('$') 
+        let line = getline(lnum) 
+        let fnamePos = stridx(line, '|') 
+        if fnamePos > -1 
+           let fname = strpart(line, 0, fnamePos) 
+           if fname == currFname 
+                let foldEnd = lnum 
+           else " new file name 
+                if foldEnd > 0 
+                    exec foldStart.','.foldEnd.'fold' 
+                endif 
+                let currFname = fname 
+                let foldStart = lnum 
+                let foldEnd = lnum 
+            endif 
+        endif 
+        let lnum += 1 
+    endwhile 
+    if foldStart > 0 && foldEnd > 0 
+        exec foldStart.','.foldEnd.'fold' 
+    endif 
+endfunction 
+
+function! RunCscope(type, pattern)
+	call setqflist([])
+
+	let cmd = "cscope find " . a:type . " " . a:pattern
+	execute(cmd)
+
+    	let s:curList = getqflist()
+	let len = len(s:curList)
+	if (len == 0)
+		return
+	endif
+
+	" QF will cause to jump to the first found entry. This will move back.
+	execute("normal! \<C-O>")
+
+	" Jump to/Open a QF window
+	execute("copen")
+	call FoldQFFiles()
+endfunction
+
+function! CscopeSearchPattern(type, pattern)
+	let len=strlen(a:pattern)
+	if (len < 2)
+		echomsg "cancel search."
+		return
+	endif
+
+	let new_pat_tmp=substitute(a:pattern, " ", "\.\*", "g")
+	let new_pat="\.\*" . new_pat_tmp . "\.\*"
+	call RunCscope(a:type, new_pat)
+endfunction
+"nnoremap <silent> <F7> :call CscopeSearchPattern("s", inputdialog('Search for: '))<CR>
+nnoremap <silent> <C-l> :call CscopeSearchPattern("s", inputdialog('Search for: '))<CR>
+nnoremap <silent> <C-f> :call CscopeSearchPattern("f", inputdialog('Search for file: '))<CR>
+
+" Find calls to the word under cursor
+function! RunCscopeC()
+	let arg_name = expand("<cword>")
+	call RunCscope("c", arg_name)
+endfunction
+
+" Find string under cursor
+function! RunCscopeS()
+	let arg_name = expand("<cword>")
+	call RunCscope("s", arg_name)
+endfunction
+
+"nnoremap <silent> <C-F7> :call RunCscopeS()<CR>
+nnoremap <silent> <leader>s :call RunCscopeS()<CR>
+nnoremap <silent> <leader>c :call RunCscopeC()<CR>
+nnoremap <silent> <leader>1 :cp<CR>
+nnoremap <silent> <leader>2 :cn<CR>
+nnoremap <silent> <leader>3 :cclose<CR>
+
+" Add a kernel-doc function comment at the first empty line 
+" above a C function.
+"
+" Need to position the cursor above or on the same line as the 
+" function signature.
+"
+" It assumes that the open bracket follows func name on the same line
+" and will NOT work for a definition like the one below
+" foo
+" ()
+"
+
+function! AddFuncComment()
+	let [open_br_line, open_br_col] = searchpos('(')
+	let close_br_line = search(')')
+
+	let open_br_col -= 1
+	" move cursor to one position to the left of the opening bracket
+	call cursor(open_br_line, open_br_col)	
+	let func_name = expand("<cword>")
+
+	" build a list of arguments
+	let arg_list = []
+	let close_br_line += 1
+	let [line, col] = searchpos('\,\|)', '', close_br_line)
+	while line != 0
+		let col -= 1
+		call cursor(line, col)
+		let token = expand("<cword>")
+		call add(arg_list, token)
+		let col += 2
+		call cursor(line, col)
+		let [line, col] = searchpos('\,\|)', '', close_br_line)
+	endwhile
+
+	" unset the comments to avoid auto generated asterisks
+	setlocal comments=
+	" start adding the header, move cursor to teh first empty line above
+	call cursor(open_br_line, open_br_col)	
+	let [line, col] = searchpos('^\n', 'b', 0)
+	call cursor(line, col)
+	exe "normal a\n/**\n"
+	exe "normal a * " . func_name . "() - \n"
+	let arg_count = 0
+	let arg_num = len(arg_list)
+	if arg_num != 1 || arg_list[0] != "void"
+		while arg_count < arg_num
+			exe "normal a * @" . arg_list[arg_count] . ":\n"
+			let arg_count += 1
+		endwhile	
+	endif
+	exe "normal a *\n*/\<Esc>"
+	" restore the original comments option from the global
+	setlocal comments<
+endfunction
+nnoremap <leader>h :call AddFuncComment()<CR>
+
+function! MyEnv(env)
+	if a:env == "linux" 
+		set tabstop=8 " set tab character to 8 characters
+		set shiftwidth=8 " indent width for autoindent
+		set noexpandtab
+	  set textwidth=80
+	elseif a:env == "fw"
+		set tabstop=2 " set tab character to 2 characters
+		set shiftwidth=2 " indent width for autoindent
+		set expandtab
+	  set textwidth=100
+	elseif a:env == "bash"
+		set tabstop=4 " set tab character to 2 characters
+		set shiftwidth=4 " indent width for autoindent
+		set expandtab
+	  set textwidth=200
+	else
+		echom 'Usage: call MyEnv("linux"|"fw"|"bash")'
+	endif
+endfunction
+"
+" FIXME:
+" sourcing at the end - since probably there's some collision of mappings,
+" the plugin doesn't work otherwise.
+:source ~/.vim/plugin/mark.vim
+
+" Disable connecting to X server to speed up a start up time
+set clipboard=exclude:.*
+
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
