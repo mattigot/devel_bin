@@ -1,9 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/home/abondar/dev/wcd_rtos-zephyr/drivers/wlan/iwl'
-let g:netrw_dirhist_2='/home/abondar/dev/wcd_rtos-zephyr'
-let g:netrw_dirhist_3='/home/abondar/dev/wcd_rtos-zephyr/drivers'
-let g:netrw_dirhist_4='/home/abondar/dev/wcd_rtos-zephyr/drivers/wlan'
-let g:netrw_dirhist_5='/home/abondar/dev/wcd_rtos-zephyr/drivers/wlan/iwl'
-let g:netrw_dirhist_6='/home/abondar/dev/wcd_rtos-zephyr/drivers/wlan'
-let g:netrw_dirhist_7='/home/abondar/dev/wcd_rtos-zephyr/drivers/wlan/iwl'

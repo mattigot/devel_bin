@@ -1,4 +1,6 @@
 echo "sudo modprobe iwlmvm -r"
 sudo modprobe iwlmvm -r
+echo "sudo modprobe iwlfmac -r"
+sudo modprobe iwlfmac -r
 echo "sudo modprobe iwlwifi -r"
 sudo modprobe iwlwifi -r

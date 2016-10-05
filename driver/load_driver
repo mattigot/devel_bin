@@ -3,15 +3,16 @@
 #NVM_FILE="iwl_nvm.bin"
 #DEBUG="0x1800020"
 #DEBUG="0x08000000"
-#DEBUG="0x00000001"
+DEBUG="0x0000000"
 #DEBUG="0x00010000"
-DEBUG="0x8000000"
+#DEBUG="0x8000000"
 #DEBUG="0xfffffff"
 
 
 sudo dmesg -c
 sudo modprobe iwlxvt -r
 sudo modprobe iwlmvm -r
+sudo modprobe iwlfmac -r
 sudo modprobe iwlwifi -r
 
 #sleep 1
@@ -28,7 +29,7 @@ sudo modprobe iwlwifi -r
 #sleep 2
 
 #echo "sudo modprobe iwlwifi"
-sudo modprobe iwlwifi debug=$DEBUG $1
+sudo modprobe iwlwifi debug=$DEBUG disable_msix=1 debug=0x80800004 $1
 #sudo modprobe iwlwifi
 sleep 1
 sudo ifconfig wlan0 up

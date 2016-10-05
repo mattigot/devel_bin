@@ -1,15 +1,54 @@
 #!/bin/bash -x
 
+LINUX=~/devel/linux
+ZEPHYR=~/devel/zephyr
+FMAC=~/devel/fmac
+
 mkdir ~/devel
-mkdir ~/devel/driver
-mkdir ~/devel/hostap
-mkdir ~/devel/fw
+mkdir $LINUX
+mkdir $ZEPHYR
+mkdir $LINUX/driver
+mkdir $LINUX/hostap
+mkdir $LINUX/fw
 
-git clone ssh://mgottlie@git-amr-3.devtools.intel.com:29418/iwlwifi-stack-dev ~/devel/driver/iwlwifi-stack-dev
-git clone ssh://mgottlie@git-ger-8.devtools.intel.com:29418/iwlwifi-stack-public-modrename ~/devel/driver/iwlwifi-stack-public-modrename
 
-git clone ssh://mgottlie@git-amr-3.devtools.intel.com:29418/iwlwifi-hostap ~/devel/hostap/iwlwifi-hostap
-git clone ssh://mgottlie@git-ger-8.devtools.intel.com:29418/iwlwifi-hostap-public ~/devel/hostap/iwlwifi-hostap-public
+sudo apt-get update
+#sudo apt-get upgrade -y
+sudo apt-get install git make gcc g++ python3-ply ncurses-dev -y
 
-git clone ssh://mgottlie@git-ger-8.devtools.intel.com:29418/iwlwifi-fw-binary-public ~/devel/fw/iwlwifi-fw-binary-public
+zephyr_setup() {
+	git clone ssh://mgottlie@git-amr-3.devtools.intel.com:29418/wcd_rtos-zephyr $ZEPHYR/wcd_rtos-zephyr
 
+	pushd $ZEPHYR/wcd_rtos-zephyr
+	git checkout -b intc/master -t origin/intc/master
+	popd
+
+	git clone https://gerrit.zephyrproject.org/r/zephyr zephyr-project $ZEPHYR/zephyr
+
+	mkdir $ZEPHYR/zephyr-sdk
+	pushd $ZEPHYR/zephyr-sdk
+	wget https://nexus.zephyrproject.org/content/repositories/releases/org/zephyrproject/zephyr-sdk/0.8.2-i686/zephyr-sdk-0.8.2-i686-setup.run
+	chmod +x zephyr-sdk-0.8.2-i686-setup.run
+	./zephyr-sdk-0.8.2-i686-setup.run
+}
+
+linux_setup() {
+	git clone ssh://mgottlie@git-amr-3.devtools.intel.com:29418/iwlwifi-stack-dev $LINUX/driver/iwlwifi-stack-dev
+	git clone ssh://mgottlie@git-amr-3.devtools.intel.com:29418/iwlwifi-hostap $LINUX/hostap/iwlwifi-hostap
+	git clone ssh://mgottlie@git-ger-8.devtools.intel.com:29418/iwlwifi-fw-binary-public $LINUX/fw/iwlwifi-fw-binary-public
+}
+
+fmac_setup() {
+	git clone ssh://mgottlie@git-amr-3.devtools.intel.com:29418/iwlwifi-iw $FMAC/iwlwifi-iw
+	git clone ssh://mgottlie@git-amr-3.devtools.intel.com:29418/iwlwifi-fw-utils $FMAC/iwlwifi-fw-utils
+	git clone ssh://mgottlie@git-amr-3.devtools.intel.com:29418/iwlwifi-hostap $FMAC/iwlwifi-hostap
+
+	pushd $FMAC/iwlwifi-hostap
+	git checkout -b intc/dev-build -t origin/intc/dev-build
+	popd
+
+	git clone ssh://mgottlie@git-amr-3.devtools.intel.com:29418/iwlwifi-fwbldenv $FMAC/iwlwifi-fwbldenv
+	git clone -b fmac --recursive ssh://mgottlie@git-amr-3.devtools.intel.com:29418/iwlwifi-fw $FMAC/iwlwifi-fw
+	mv $FMAC/iwlwifi-hostap $FMAC/iwlwifi-fw/fw/src/umac/src/hostap
+}
+fmac_setup
